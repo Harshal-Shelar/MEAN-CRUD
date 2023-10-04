@@ -31,7 +31,13 @@ section {
     font-weight: 500;
     font-family: "Rubik", sans-serif;
 }
-
+.addTable{
+    background: transparent; 
+    padding: 20px; 
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 3px 20px 10px #1c1c1c;
+}
 label {
     font-weight: 500;
     color: white;
