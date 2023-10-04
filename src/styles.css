@@ -84,6 +84,7 @@ form{
 .gapTwoBtn{
     gap: 1rem;
     display: flex;
+    margin-top: 2rem;
 }
 
 @media (max-width : 767px) {
