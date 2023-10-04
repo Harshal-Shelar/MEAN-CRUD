@@ -1,1 +1,61 @@
-<p>list-all works!</p>
+<section class="list-all">
+    <h2 class="mainHeading" style="text-align: center;">CRUD- MEAN Stack</h2>
+    <div class="row">
+        <div class="col-md-12" style="padding: 0 !important;">
+            <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
+                Add New User
+            </button>
+        </div>
+    </div>
+    <div class="row mainTable">
+        <div class="col-md-12">
+            <table class="table table-responsive table-borderless" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">Profile Image</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone number</th>
+                        <th scope="col">Instrument</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList">
+                        <td scope="row"> <img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
+                        <td scope="row">{{user.firstName?user.firstName:''}}</td>
+                        <td scope="row">{{user.lastName?user.lastName:''}}</td>
+                        <td scope="row">{{user.address?user.address:''}}</td>
+                        <td scope="row">{{user.email?user.email:''}}</td>
+                        <td scope="row">{{user.phoneNumber?user.phoneNumber:''}}</td>
+                        <td scope="row">{{user.instrument?user.instrument:''}}</td>
+                        <td scope="row" style="display: flex; gap: 0.5rem;">
+                            <button type="button" class="btn btn-secondary action-btn"
+                                [routerLink]="[ '/edit', user._id ]">Edit</button>
+                            <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
+                                data-target="#myModal" (click)="selectUser(user)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="modal-msg">Are you sure?</p>
+                <p class="modal-msg">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger action-btn" data-dismiss="modal"
+                        (click)="deleteUser()">Submit</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+form{
+    margin-top: 2rem;
+    background-color: black;
+    border-radius: 15px;
+    padding: 2rem;
+    border: 0.5px solid rgb(0, 0, 0);
+    box-shadow: 0px 5px 15px 5px #1c1c1c;
+}
+.btn-primary{
+    background-color: transparent;
+    color: rgb(17, 172, 255);
+    border: 2px solid rgb(17, 172, 255);
+    font-size: 20px;
+}

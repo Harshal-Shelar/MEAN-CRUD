@@ -1,1 +1,101 @@
-<p>edit works!</p>
+<section>
+    <button type="button" class="btn btn-secondary width100 btnSecondary" [routerLink]="[ '/']">
+        Show List
+    </button>
+</section>
+
+<section>
+    <form [formGroup]="userForm" (ngSubmit)="editUser()">
+        <div class="row">
+            <div class="col-md-6">
+                <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+                    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                        <button class="choose-file" type="button" mat-button (click)="openFileSelector()">
+                            Choose File
+                        </button>
+                    </ng-template>
+                </ngx-file-drop>
+                <div class="image-info">Maximum size of 2000px JPG, GIF,
+                    PNG</div>
+            </div>
+            <div class="col-md-6 profileCenter">
+                <img *ngIf="imageSrc != 'default'" [src]="imageSrc" style="height: 150px; width:150px"
+                    onerror='this.onerror=null;this.src="../../../../assets/images/user_profile.png";' alt="user image">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="firstName" formControlName="firstName"
+                        placeholder="Enter First Name">
+                    <div class="valErr" *ngIf="hasError('firstName','required')">Enter First Name
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="lastName" formControlName="lastName"
+                        placeholder="Enter Last Name">
+                    <div class="valErr" *ngIf="hasError('lastName','required')">Enter Last Name
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" formControlName="email"
+                        placeholder="Enter Email">
+                    <div class="valErr" *ngIf="hasError('email','required')">Enter Email
+                    </div>
+                    <div class="valErr" *ngIf="hasError('email','email')">Enter valid Email
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phoneNumber">Phone #</label>
+                    <input type="email" class="form-control" name="phoneNumber" id="phoneNumber"
+                        formControlName="phoneNumber" placeholder="Enter Phone #">
+                    <div class="valErr" *ngIf="hasError('phoneNumber','required')">Enter Phone #
+                    </div>
+                    <div class="valErr" *ngIf="hasError('phoneNumber','pattern')">Enter valid Phone #
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phoneNumber">Address</label>
+                    <input type="email" class="form-control" name="address" id="address"
+                        formControlName="address" placeholder="Enter Address #">
+                    <div class="valErr" *ngIf="hasError('address','required')">Enter Address
+                    </div>
+                    <div class="valErr" *ngIf="hasError('address','pattern')">Enter Address
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phoneNumber">Instrument</label>
+                    <input type="text" class="form-control" name="instrument" id="instrument"
+                        formControlName="instrument" placeholder="Enter Instrument #">
+                    <div class="valErr" *ngIf="hasError('instrument','required')">Enter Instrument
+                    </div>
+                    <div class="valErr" *ngIf="hasError('instrument','pattern')">Enter Instrument
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-center gapTwoBtn">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" routerLink="" class="btn btn-danger btnDanger action-btn">Cancel</button>
+        </div>
+    </form>
+</section>
