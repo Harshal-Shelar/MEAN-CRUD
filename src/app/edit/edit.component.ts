@@ -36,8 +36,7 @@ export class EditComponent implements OnInit {
       profileImg: [null]
     });
     
-    this.userId = this.route.snapshot.params;
-    console.log("user id :- ",this.userId);
+    this.userId = this.route.snapshot.params.id;
     this.getUser();
   }
 
