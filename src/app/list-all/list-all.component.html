@@ -1,7 +1,7 @@
 <section class="list-all">
     <h2 class="mainHeading">CRUD- MEAN Stack</h2>
     <div class="searchAndAdd">
-        <input type="text" [(ngModel)]="firstName" class="searchInput" placeholder="Search...">
+        <input type="text" class="searchInput" placeholder="Search...">
         <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
             Add New User <i class="fa fa-user-plus"></i>
         </button>
@@ -31,7 +31,7 @@
                             itemsPerPage: tableSize,
                             currentPage: page,
                             totalItems: count
-                          }| customerEmailFilter:firstName;let i = index">
+                          };let i = index">
                         <td scope="row"> <img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
                         <td scope="row">{{user.firstName}}</td>
                         <td scope="row">{{user.lastName}}</td>

@@ -11,15 +11,13 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './service/user.service';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
     EditComponent,
-    ListALLComponent,
-    SearchPipe
+    ListALLComponent
   ],
   imports: [
     BrowserModule,

@@ -14,8 +14,6 @@ export class ListALLComponent implements OnInit {
   count : number = 0;
   tableSize : number = 5;
   tableSizes : any = [5,10,15,20];
-  firstName : any = "";
-  aa:boolean=false;
   openPopup: any = false;
   deleteUserName : any;
 
