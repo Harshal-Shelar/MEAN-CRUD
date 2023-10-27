@@ -1,5 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
 
+@font-face {
+  font-family: "pridibold";
+  src: url("./assets/fonts/pridi-bold-webfont.woff2") format("woff2"),
+    url("./assets/fonts/pridi-bold-webfont.woff") format("woff"),
+    url("./assets/fonts/pridi-bold-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pridimedium";
+  src: url("./assets/fonts/pridi-medium-webfont.woff2") format("woff2"),
+    url("./assets/fonts/pridi-medium-webfont.woff") format("woff"),
+    url("./assets/fonts/pridi-medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pridimedium";
+  src: url("./assets/fonts/pridi-medium-webfont.woff2") format("woff2"),
+    url("./assets/fonts/pridi-medium-webfont.woff") format("woff"),
+    url("./assets/fonts/pridi-medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
     --glow-color: hsl(186 100% 69%);
 }
@@ -7,21 +33,26 @@
 section {
     margin: 50px;
 }
-
+.col-md-6{
+    margin-top: 1.5rem;
+}
 .form-control {
     border-radius: 0 !important;
     height: 3rem;
     border-radius: 5px !important;
     font-family: "Rubik", sans-serif;
+    background-color: rgb(204, 204, 204);
+    margin-top: 0.3rem;
 }
 
 .addUserBtn {
     float: right;
     height: 3rem;
+    width: fit-content;
     border-radius: 10px;
     font-size: 20px;
-    color: black;
-    border: 2px solid black;
+    color: rgb(3, 3, 3);
+    border: 2px solid rgb(3, 3, 3);
     background-color: transparent;
     font-family: "Rubik", sans-serif;
 }
@@ -31,12 +62,31 @@ section {
     font-weight: 500;
     font-family: "Rubik", sans-serif;
 }
+.mainBody{
+    height: 100%;
+    width: 100%;
+    background-color: #edfdff;
+}
 .addTable{
-    background: transparent; 
+    background: white; 
     padding: 20px; 
     border: 1px solid black;
     border-radius: 15px;
-    box-shadow: 0px 3px 20px 10px #1c1c1c;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.searchInput{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 2px solid white;
+    padding-left: 10px;
+}
+
+.searchIcon{
+    background-color: transparent;
+    border: 2px solid white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 label {
     font-weight: 500;
@@ -48,6 +98,7 @@ form{
 }
 .action-btn {
     background-color: transparent;
+    font-family: "Rubik", sans-serif;
 }
 .btn-danger{
     border: 2px solid red;
@@ -93,9 +144,10 @@ form{
     margin-top: 2rem;
 }
 
-@media (max-width : 767px) {
+@media (max-width : 500px) {
     .addUserBtn {
-        width: 100%;
+        display: none;
+        visibility: hidden;
     }
     section {
         margin: 50px 30px;
@@ -129,5 +181,8 @@ form{
 
     .width100{
         width: 100% !important;
+    }
+    .searchAdd{
+        display: inline;
     }
 }

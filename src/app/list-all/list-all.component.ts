@@ -4,11 +4,19 @@ import { UserService } from '../service/user.service';
 @Component({
   selector: 'app-list-all',
   templateUrl: './list-all.component.html',
-  styleUrls: ['./list-all.component.css']
+  styleUrls: ['./list-all.component.scss']
 })
 export class ListALLComponent implements OnInit {
-  userList: any;
+
+  userList: any = [];
   selectedUser: any;
+  page : number = 1;
+  count : number = 0;
+  tableSize : number = 5;
+  tableSizes : any = [5,10,15,20];
+  firstName : any = "";
+  aa:boolean=false;
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -35,5 +43,16 @@ export class ListALLComponent implements OnInit {
 
   selectUser(user:any) {
     this.selectedUser = user;
+  }
+
+  onTableDataChange(event:any){
+    this.page = event;
+    this.getAll();
+  }
+
+  onTableSizeChange(event:any){
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getAll();
   }
 }

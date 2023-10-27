@@ -1,48 +1,65 @@
 <section class="list-all">
-    <h2 class="mainHeading" style="text-align: center;">CRUD- MEAN Stack</h2>
-    <div class="addTable">
-        <div class="row">
-            <div class="col-md-12" style="padding: 0 !important;">
-                <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
-                    Add New User
-                </button>
-            </div>
+    <h2 class="mainHeading">CRUD- MEAN Stack</h2>
+    <div class="searchAndAdd">
+        <input type="text" [(ngModel)]="firstName" class="searchInput" placeholder="Search...">
+        <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
+            Add New User <i class="fa fa-user-plus"></i>
+        </button>
+    </div>
+    <div class="topIcons">
+        <i class="fa fa-search searchIcon"></i>
+        <i class="fa fa-user-plus addUserIcon" [routerLink]="[ '/add']"></i>
+    </div>
+    <div class="row mainTable">
+        <div class="col-md-12">
+            <table class="table table-borderless" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">Profile Image</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone number</th>
+                        <th scope="col">Instrument</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList| paginate
+                        : {
+                            itemsPerPage: tableSize,
+                            currentPage: page,
+                            totalItems: count
+                          }| customerEmailFilter:firstName;let i = index">
+                        <td scope="row"> <img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
+                        <td scope="row">{{user.firstName}}</td>
+                        <td scope="row">{{user.lastName}}</td>
+                        <td scope="row">{{user.address}}</td>
+                        <td scope="row">{{user.email}}</td>
+                        <td scope="row">{{user.phoneNumber}}</td>
+                        <td scope="row">{{user.instrument}}</td>
+                        <td scope="row" style="display: flex; gap: 0.5rem;">
+                            <button type="button" class="btn btn-secondary action-btn"
+                                [routerLink]="[ '/edit', user._id ]">Edit</button>
+                            <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
+                                data-target="#myModal" (click)="selectUser(user)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="row mainTable">
-            <div class="col-md-12">
-                <table class="table table-responsive table-borderless" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th scope="col">Profile Image</th>
-                            <th scope="col">First name</th>
-                            <th scope="col">Last name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone number</th>
-                            <th scope="col">Instrument</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let user of userList">
-                            <td scope="row"> <img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
-                            <td scope="row">{{user.firstName?user.firstName:''}}</td>
-                            <td scope="row">{{user.lastName?user.lastName:''}}</td>
-                            <td scope="row">{{user.address?user.address:''}}</td>
-                            <td scope="row">{{user.email?user.email:''}}</td>
-                            <td scope="row">{{user.phoneNumber?user.phoneNumber:''}}</td>
-                            <td scope="row">{{user.instrument?user.instrument:''}}</td>
-                            <td scope="row" style="display: flex; gap: 0.5rem;">
-                                <button type="button" class="btn btn-secondary action-btn"
-                                    [routerLink]="[ '/edit', user._id ]">Edit</button>
-                                <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
-                                    data-target="#myModal" (click)="selectUser(user)">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    </div>
+    <div class="paginationNum">
+        <div class="selectPage">
+            <select (change)="onTableSizeChange($event)">
+                <option *ngFor="let size of tableSizes">
+                    {{size}}
+                </option>
+            </select>
         </div>
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
     </div>
 </section>
 
