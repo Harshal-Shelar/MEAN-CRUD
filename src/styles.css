@@ -122,10 +122,11 @@ form{
     font-family: "Rubik", sans-serif;
 }
 .btnSecondary{
-    border: 1px solid black !important;
+    border: none !important;
     color: black !important;
-    border-radius: 5px !important;
+    border-radius: 10px !important;
 }
+
 .btn-danger{
     color: red;
 }

@@ -1,6 +1,6 @@
 <section class="addNewSection">
     <button type="button" class="btn btn-secondary width100 btnSecondary" [routerLink]="[ '/']">
-        Show List
+        <i class="fa fa-chevron-left"></i> &nbsp; Show List
     </button>
 </section>
 
@@ -18,10 +18,10 @@
                 </ngx-file-drop>
                 <div class="image-info">Maximum size of 2000px JPG, GIF,
                     PNG</div>
-                <div class="valErr" *ngIf="hasError('profileImg','required')">Upload Image
+                <div class="valErr" *ngIf="hasError('profileImg','required') && formInvalid">Upload Image
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 centerImage">
                 <img *ngIf="imageSrc != 'default'" [src]="imageSrc" style="height: 150px;"
                     onerror='this.onerror=null;this.src="assets/images/user_profile.png";' alt="user image">
             </div>
@@ -33,7 +33,7 @@
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" name="firstName" id="firstName" formControlName="firstName"
                         placeholder="Enter First Name">
-                    <div class="valErr" *ngIf="hasError('firstName','required')">Enter First Name
+                    <div class="valErr" *ngIf="hasError('firstName','required') && formInvalid">Enter First Name
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <label for="lastName">Last Name</label>
                     <input type="text" class="form-control" name="lastName" id="lastName" formControlName="lastName"
                         placeholder="Enter Last Name">
-                    <div class="valErr" *ngIf="hasError('lastName','required')">Enter Last Name
+                    <div class="valErr" *ngIf="hasError('lastName','required') && formInvalid">Enter Last Name
                     </div>
                 </div>
             </div>
@@ -54,9 +54,9 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" id="email" formControlName="email"
                         placeholder="Enter Email">
-                    <div class="valErr" *ngIf="hasError('email','required')">Enter Email
+                    <div class="valErr" *ngIf="hasError('email','required') && formInvalid">Enter Email
                     </div>
-                    <div class="valErr" *ngIf="hasError('email','email')">Enter valid Email
+                    <div class="valErr" *ngIf="hasError('email','email') && formInvalid">Enter valid Email
                     </div>
                 </div>
             </div>
@@ -65,9 +65,9 @@
                     <label for="phoneNumber">Phone #</label>
                     <input type="email" class="form-control" name="phoneNumber" id="phoneNumber"
                         formControlName="phoneNumber" placeholder="Enter Phone #">
-                    <div class="valErr" *ngIf="hasError('phoneNumber','required')">Enter Phone #
+                    <div class="valErr" *ngIf="hasError('phoneNumber','required') && formInvalid">Enter Phone #
                     </div>
-                    <div class="valErr" *ngIf="hasError('phoneNumber','pattern')">Enter valid Phone #
+                    <div class="valErr" *ngIf="hasError('phoneNumber','pattern') && formInvalid">Enter valid Phone #
                     </div>
                 </div>
             </div>
@@ -76,9 +76,9 @@
                     <label for="phoneNumber">Address</label>
                     <input type="email" class="form-control" name="address" id="address"
                         formControlName="address" placeholder="Enter Address #">
-                    <div class="valErr" *ngIf="hasError('address','required')">Enter Address #
+                    <div class="valErr" *ngIf="hasError('address','required') && formInvalid">Enter Address #
                     </div>
-                    <div class="valErr" *ngIf="hasError('address','pattern')">Enter Address #
+                    <div class="valErr" *ngIf="hasError('address','pattern') && formInvalid">Enter Address #
                     </div>
                 </div>
             </div>
@@ -87,9 +87,9 @@
                     <label for="phoneNumber">Instrument</label>
                     <input type="email" class="form-control" name="instrument" id="instrument"
                         formControlName="instrument" placeholder="Enter Instrument #">
-                    <div class="valErr" *ngIf="hasError('instrument','required')">Enter Instrument
+                    <div class="valErr" *ngIf="hasError('instrument','required') && formInvalid">Enter Instrument
                     </div>
-                    <div class="valErr" *ngIf="hasError('instrument','pattern')">Enter Instrument
+                    <div class="valErr" *ngIf="hasError('instrument','pattern') && formInvalid">Enter Instrument
                     </div>
                 </div>
             </div>

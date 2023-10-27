@@ -17,12 +17,13 @@ import { ToastrService } from 'ngx-toastr';
 export class AddComponent implements OnInit {
   userForm!: FormGroup;
   imageSrc: any;
+  formInvalid: any;
 
   constructor(
     private cd: ChangeDetectorRef,
     private location: Location,
     private toastr: ToastrService,
-   private userService : UserService,
+    private userService: UserService,
     private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -47,7 +48,7 @@ export class AddComponent implements OnInit {
       formData.append('phoneNumber', this.userForm.value.phoneNumber);
       formData.append('profileImg', this.userForm.value.profileImg);
 
-      this.userService.addUser(formData).subscribe((result:any) => {
+      this.userService.addUser(formData).subscribe((result: any) => {
         if (result.status) {
           this.location.back();
           this.toastr.success(result.msg);
@@ -56,6 +57,7 @@ export class AddComponent implements OnInit {
         }
       });
     } else {
+      this.formInvalid = true;
       this.toastr.error('Fill all the required fields');
       return false;
     }
@@ -104,12 +106,12 @@ export class AddComponent implements OnInit {
       }
     }
   }
-  
-  fileOver(event:any) {
+
+  fileOver(event: any) {
     // Gets called after a file-drop.
   }
 
-  fileLeave(event:any) {
+  fileLeave(event: any) {
     // Gets called when you leave a file-drop.
   }
 }
