@@ -80,6 +80,66 @@ td {
     --bs-table-bg: none !important;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
+
+    .popup {
+        margin: 5rem auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        width: 500px;
+        position: relative;
+        transition: all 5s ease-in-out;
+        z-index: 999;
+        text-align: -webkit-center;
+
+        .close {
+            position: absolute;
+            top: -19px;
+            right: 7px;
+            transition: all 200ms;
+            font-size: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .close:hover {
+            color: #000000;
+            cursor: pointer;
+        }
+
+        .content {
+            max-height: fit-content;
+            width: fit-content;
+            overflow: auto;
+
+            h4 {
+                margin-top: 2rem;
+                color: #333;
+                font-family: "Rubik", sans-serif;
+                text-align: center;
+            }
+
+            .popupBtns {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
 @media (min-width : 500px) {
 
     .addUserIcon,
@@ -88,17 +148,33 @@ td {
         visibility: hidden;
     }
 }
+
 @media (max-width : 767px) {
     .mainTable {
         margin-top: 2rem;
     }
+
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .popup {
+            margin: auto;
+            width: 90%;
+        }
+    }
 }
+
 @media (max-width : 500px) {
     .addUserIcon {
         float: right;
     }
 
-    .searchAndAdd{
+    .searchAndAdd {
         display: none;
         visibility: hidden;
     }

@@ -16,6 +16,8 @@ export class ListALLComponent implements OnInit {
   tableSizes : any = [5,10,15,20];
   firstName : any = "";
   aa:boolean=false;
+  openPopup: any = false;
+  deleteUserName : any;
 
   constructor(private userService: UserService) { }
 
@@ -43,6 +45,8 @@ export class ListALLComponent implements OnInit {
 
   selectUser(user:any) {
     this.selectedUser = user;
+    this.deleteUserName = user.firstName;
+    return this.openPopup = true;
   }
 
   onTableDataChange(event:any){

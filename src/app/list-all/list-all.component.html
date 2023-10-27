@@ -63,17 +63,14 @@
     </div>
 </section>
 
-
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <p class="modal-msg">Are you sure?</p>
-                <p class="modal-msg">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger action-btn" data-dismiss="modal"
-                        (click)="deleteUser()">Submit</button>
-                </p>
+<div class="overlay" *ngIf="openPopup">
+    <div class="popup">
+        <a class="close" (click)="openPopup = false">&times;</a>
+        <div class="content">
+            <h4>You want to delete the record of {{deleteUserName}} ?</h4>
+            <div class="popupBtns">
+                <button type="cancel" class="btn btn-info" (click)="openPopup = false">Cancel</button>
+                <button type="button" class="btn btn-danger action-btn" (click)="deleteUser()">Delete</button>
             </div>
         </div>
     </div>

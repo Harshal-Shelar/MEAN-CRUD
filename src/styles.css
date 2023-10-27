@@ -105,6 +105,16 @@ form{
     font-size: 17px;
     font-family: "Rubik", sans-serif;
 }
+.btn-info{
+    color: rgb(85, 85, 85);
+    border: 2px solid rgb(85, 85, 85);
+    font-family: "Rubik", sans-serif;
+    background-color: transparent;
+}
+.btn-info:hover{
+    background-color: gray;
+    border: 2px solid gray;
+}
 .btn-secondary{
     border: 2px solid white;
     background-color: transparent;
