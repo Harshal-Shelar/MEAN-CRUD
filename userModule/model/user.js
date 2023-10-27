@@ -13,6 +13,5 @@ const userModelSchema = new Schema({
 }, {
     timestamps: true
 });
-// Compile model from schema
 const userModel = mongoose.model('user', userModelSchema);
 module.exports = userModel;
