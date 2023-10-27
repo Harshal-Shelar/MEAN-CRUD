@@ -1,83 +1,81 @@
-.mainTable {
-    background-color: black;
-    border-radius: 15px;
-    margin-top: 1rem;
-    border-spacing: 0;
-    overflow-x: auto;
-    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
-}
-
-.mainHeading {
-    color: rgb(29, 29, 29);
-    text-align: center;
-    font-family: "Rubik", sans-serif;
-}
-
-select {
-    width: 100px;
-    border-radius: 10px;
-    border: 1px solid black;
-}
-
-.paginationNum {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-
-    .selectPage {
-
-        select {
-            height: 2.5rem;
-            font-size: 20px;
-        }
-    }
-}
-
-th {
-    color: white;
-    border-bottom: 1px solid gray;
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
-
-}
-
-thead {
-    border-bottom: 1px solid rgb(85, 85, 85);
-    width: 100%;
-}
-
-td {
-    color: white;
-    width: fit-content;
-    font-family: "Rubik", sans-serif;
-}
-
-.searchAndAdd {
-    display: flex;
-    justify-content: space-between;
-
-    .searchInput {
-        height: 3rem;
-        border-radius: 10px;
-        color: rgb(3, 3, 3);
-        border: 2px solid rgb(3, 3, 3);
+.list-all {
+    .mainHeading {
+        color: rgb(29, 29, 29);
+        text-align: center;
         font-family: "Rubik", sans-serif;
     }
-}
 
-.topIcons {
-    display: flex;
-    justify-content: space-between;
+    .searchAndAdd {
+        display: flex;
+        justify-content: space-between;
 
-    .addUserIcon,
-    .searchIcon {
-        font-size: 32px;
-        margin: 1rem 0 0;
+        .searchInput {
+            height: 3rem;
+            border-radius: 10px;
+            color: rgb(3, 3, 3);
+            border: 2px solid rgb(3, 3, 3);
+            font-family: "Rubik", sans-serif;
+        }
     }
-}
 
-.table {
-    --bs-table-bg: none !important;
+    .topIcons {
+        display: flex;
+        justify-content: space-between;
+
+        .addUserIcon,
+        .searchIcon {
+            font-size: 32px;
+            margin: 1rem 0 0;
+        }
+    }
+
+    .mainTable {
+        background-color: black;
+        border-radius: 15px;
+        margin-top: 1rem;
+        border-spacing: 0;
+        overflow-x: auto;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+
+        .table {
+            --bs-table-bg: none !important;
+
+            thead {
+                border-bottom: 1px solid rgb(85, 85, 85);
+                width: 100%;
+
+                th {
+                    color: white;
+                    border-bottom: 1px solid gray;
+                    font-family: "Rubik", sans-serif;
+                    font-weight: 500;
+                }
+            }
+
+            td {
+                color: white;
+                width: fit-content;
+                font-family: "Rubik", sans-serif;
+            }
+        }
+    }
+
+    .paginationNum {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        .selectPage {
+
+            select {
+                width: 100px;
+                border-radius: 10px;
+                border: 1px solid black;
+                height: 2.5rem;
+                font-size: 20px;
+            }
+        }
+    }
 }
 
 .overlay {
@@ -96,7 +94,7 @@ td {
         padding: 20px;
         background: #fff;
         border-radius: 15px;
-        width: 500px;
+        width: fit-content;
         position: relative;
         transition: all 5s ease-in-out;
         z-index: 999;
@@ -142,10 +140,13 @@ td {
 
 @media (min-width : 500px) {
 
-    .addUserIcon,
-    .searchIcon {
-        display: none;
-        visibility: hidden;
+    .list-all {
+        .topIcons {
+            .addUserIcon, .searchIcon {
+                display: none;
+                visibility: hidden;
+            }
+        }
     }
 }
 
@@ -170,30 +171,34 @@ td {
 }
 
 @media (max-width : 500px) {
-    .addUserIcon {
-        float: right;
-    }
+    .list-all {
+        .paginationNum {
+            display: inline;
+            text-align: center;
 
-    .searchAndAdd {
-        display: none;
-        visibility: hidden;
-    }
+            .selectPage {
+                margin: 1rem 0;
 
-    .mainTable {
-        margin-top: 2rem;
-    }
-
-    .paginationNum {
-        display: inline;
-        text-align: center;
-
-        .selectPage {
-            margin: 1rem 0;
-
-            select {
-                height: 2.5rem;
-                font-size: 20px;
+                select {
+                    height: 2.5rem;
+                    font-size: 20px;
+                }
             }
+        }
+
+        .topIcons {
+            .addUserIcon {
+                float: right;
+            }
+        }
+
+        .searchAndAdd {
+            display: none;
+            visibility: hidden;
+        }
+
+        .mainTable {
+            margin-top: 2rem;
         }
     }
 }
