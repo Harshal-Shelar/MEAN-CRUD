@@ -84,7 +84,6 @@ section {
 
 .searchIcon{
     background-color: transparent;
-    border: 2px solid white;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
