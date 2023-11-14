@@ -140,6 +140,10 @@ form {
     color: black !important;
     border-radius: 10px !important;
 }
+.btnSecondary:hover{
+    text-shadow: 1px 1px 8px #e2e2e2;
+    background-color: transparent;
+}
 
 .btn-danger {
     color: red;
