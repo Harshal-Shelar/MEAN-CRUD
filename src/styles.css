@@ -1,31 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
 
 @font-face {
-  font-family: "pridibold";
-  src: url("./assets/fonts/pridi-bold-webfont.woff2") format("woff2"),
-    url("./assets/fonts/pridi-bold-webfont.woff") format("woff"),
-    url("./assets/fonts/pridi-bold-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "pridibold";
+    src: url("./assets/fonts/pridi-bold-webfont.woff2") format("woff2"),
+        url("./assets/fonts/pridi-bold-webfont.woff") format("woff"),
+        url("./assets/fonts/pridi-bold-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "pridimedium";
-  src: url("./assets/fonts/pridi-medium-webfont.woff2") format("woff2"),
-    url("./assets/fonts/pridi-medium-webfont.woff") format("woff"),
-    url("./assets/fonts/pridi-medium-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "pridimedium";
+    src: url("./assets/fonts/pridi-medium-webfont.woff2") format("woff2"),
+        url("./assets/fonts/pridi-medium-webfont.woff") format("woff"),
+        url("./assets/fonts/pridi-medium-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "pridimedium";
-  src: url("./assets/fonts/pridi-medium-webfont.woff2") format("woff2"),
-    url("./assets/fonts/pridi-medium-webfont.woff") format("woff"),
-    url("./assets/fonts/pridi-medium-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "pridimedium";
+    src: url("./assets/fonts/pridi-medium-webfont.woff2") format("woff2"),
+        url("./assets/fonts/pridi-medium-webfont.woff") format("woff"),
+        url("./assets/fonts/pridi-medium-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
+
 :root {
     --glow-color: hsl(186 100% 69%);
 }
@@ -33,9 +34,11 @@
 section {
     margin: 50px;
 }
-.col-md-6{
+
+.col-md-6 {
     margin-top: 1.5rem;
 }
+
 .form-control {
     border-radius: 0 !important;
     height: 3rem;
@@ -62,75 +65,87 @@ section {
     font-weight: 500;
     font-family: "Rubik", sans-serif;
 }
-.mainBody{
-    height: 100%;
+
+.mainBody {
     width: 100%;
-    background-color: #c3cace;
+    height: 100%;
+    background-color: rgb(91, 91, 91);
+    background-repeat: no-repeat no-repeat, no-repeat no-repeat;
 }
-.addTable{
-    background: white; 
-    padding: 20px; 
+
+.addTable {
+    background: white;
+    padding: 20px;
     border: 1px solid black;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.searchInput{
+.searchInput {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border: 2px solid white;
     padding-left: 10px;
 }
 
-.searchIcon{
+.searchIcon {
     background-color: transparent;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 label {
     font-weight: 500;
     color: white;
     font-family: "Rubik", sans-serif;
 }
-form{
+
+form {
     box-shadow: 0px 3px 20px 10px #1c1c1c;
 }
+
 .action-btn {
     background-color: transparent;
     font-family: "Rubik", sans-serif;
 }
-.btn-danger{
+
+.btn-danger {
     border: 2px solid red;
     font-size: 17px;
     font-family: "Rubik", sans-serif;
 }
-.btn-info{
+
+.btn-info {
     color: rgb(85, 85, 85);
     border: 2px solid rgb(85, 85, 85);
     font-family: "Rubik", sans-serif;
     background-color: transparent;
 }
-.btn-info:hover{
+
+.btn-info:hover {
     background-color: gray;
     border: 2px solid gray;
 }
-.btn-secondary{
+
+.btn-secondary {
     border: 2px solid white;
     background-color: transparent;
     color: white;
     font-size: 17px;
     font-family: "Rubik", sans-serif;
 }
-.btnSecondary{
+
+.btnSecondary {
     border: none !important;
     color: black !important;
     border-radius: 10px !important;
 }
 
-.btn-danger{
+.btn-danger {
     color: red;
 }
-.btn-success{
+
+.btn-success {
     border: 2px solid green;
     background-color: transparent;
     color: green;
@@ -138,7 +153,7 @@ form{
     font-family: "Rubik", sans-serif;
 }
 
-.image-info{
+.image-info {
     color: white;
 }
 
@@ -148,7 +163,7 @@ form{
     font-family: "Rubik", sans-serif;
 }
 
-.gapTwoBtn{
+.gapTwoBtn {
     gap: 1rem;
     display: flex;
     margin-top: 2rem;
@@ -159,10 +174,11 @@ form{
         display: none;
         visibility: hidden;
     }
+
     section {
         margin: 50px 30px;
     }
-    
+
     .submit-center {
         .btn-primary {
             width: 100%;
@@ -181,18 +197,19 @@ form{
         width: 50%;
     }
 
-    .profileCenter{
+    .profileCenter {
         text-align: center;
     }
-    
+
     .addNewSection {
         margin: 50px 20px;
     }
 
-    .width100{
+    .width100 {
         width: 100% !important;
     }
-    .searchAdd{
+
+    .searchAdd {
         display: inline;
     }
 }
