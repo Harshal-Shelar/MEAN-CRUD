@@ -11,13 +11,16 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './service/user.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SearchPipe } from './search.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
     EditComponent,
-    ListALLComponent
+    ListALLComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     NgxPaginationModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
     ToastrModule.forRoot(
       {
         maxOpened: 1,

@@ -1,13 +1,13 @@
 <section class="list-all">
     <h2 class="mainHeading">CRUD- MEAN Stack</h2>
     <div class="searchAndAdd">
-        <input type="text" class="searchInput" placeholder="Search...">
+        <input type="text" class="searchInput" [(ngModel)]="searchText"  placeholder="&#61442; Search...">
         <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
             Add New User <i class="fa fa-user-plus"></i>
         </button>
     </div>
     <div class="topIcons">
-        <i class="fa fa-search searchIcon"></i>
+        <i class="fa fa-search searchIcon" (click)="openSearch = true"></i>
         <i class="fa fa-user-plus addUserIcon" [routerLink]="[ '/add']"></i>
     </div>
     <div class="row mainTable">
@@ -31,7 +31,7 @@
                             itemsPerPage: tableSize,
                             currentPage: page,
                             totalItems: count
-                          };let i = index">
+                          }| filter:searchText;let i = index">
                         <td scope="row"> <img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
                         <td scope="row">{{user.firstName}}</td>
                         <td scope="row">{{user.lastName}}</td>
@@ -65,12 +65,23 @@
 
 <div class="overlay" *ngIf="openPopup">
     <div class="popup">
-        <a class="close" (click)="openPopup = false">&times;</a>
         <div class="content">
             <h4>You want to delete the record of {{deleteUserName}} ?</h4>
             <div class="popupBtns">
                 <button type="cancel" class="btn btn-info" (click)="openPopup = false">Cancel</button>
                 <button type="button" class="btn btn-danger action-btn" (click)="deleteUser()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" *ngIf="openSearch">
+    <div class="popup">
+        <div class="content">
+            <input type="text" class="mobSearch" placeholder="Search...">
+            <div class="popupBtns">
+                <button type="cancel" class="btn btn-info" (click)="openSearch = false">Cancel</button>
+                <button type="button" class="btn btn-success action-btn" (click)="deleteUser()">Search</button>
             </div>
         </div>
     </div>

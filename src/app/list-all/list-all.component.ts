@@ -15,7 +15,9 @@ export class ListALLComponent implements OnInit {
   tableSize : number = 5;
   tableSizes : any = [5,10,15,20];
   openPopup: any = false;
+  openSearch : any = false;
   deleteUserName : any;
+  searchText : any;
 
   constructor(private userService: UserService) { }
 
