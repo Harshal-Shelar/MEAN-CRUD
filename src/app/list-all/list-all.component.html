@@ -26,12 +26,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let user of userList| paginate
+                    <tr *ngFor="let user of userList | filter:searchText| paginate
                         : {
                             itemsPerPage: tableSize,
                             currentPage: page,
                             totalItems: count
-                          }| filter:searchText;let i = index">
+                          };let i = index">
                         <td scope="row"> <img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
                         <td scope="row">{{user.firstName}}</td>
                         <td scope="row">{{user.lastName}}</td>
@@ -78,10 +78,9 @@
 <div class="overlay" *ngIf="openSearch">
     <div class="popup">
         <div class="content">
-            <input type="text" class="mobSearch" placeholder="Search...">
+            <input type="text" class="mobSearch"  [(ngModel)]="searchText" placeholder="Search...">
             <div class="popupBtns">
-                <button type="cancel" class="btn btn-info" (click)="openSearch = false">Cancel</button>
-                <button type="button" class="btn btn-success action-btn" (click)="deleteUser()">Search</button>
+                <button type="cancel" class="btn btn-success" (click)="openSearch = false">Show Result</button>
             </div>
         </div>
     </div>
