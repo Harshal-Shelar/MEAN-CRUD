@@ -1,7 +1,7 @@
 <section class="list-all">
     <h2 class="mainHeading">CRUD- MEAN Stack</h2>
     <div class="searchAndAdd">
-        <input type="text" class="searchInput" [(ngModel)]="searchText"  placeholder="&#61442; Search...">
+        <input type="text" class="searchInput" [(ngModel)]="searchText"  placeholder="Search...">
         <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
             Add New User <i class="fa fa-user-plus"></i>
         </button>
@@ -16,12 +16,12 @@
                 <thead>
                     <tr>
                         <th scope="col">Profile Image</th>
-                        <th scope="col">First name</th>
-                        <th scope="col">Last name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Phone number</th>
-                        <th scope="col">Instrument</th>
+                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;First name</th>
+                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Last name</th>
+                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Address</th>
+                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Email</th>
+                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Phone number</th>
+                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Instrument</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>

@@ -18,6 +18,7 @@ export class ListALLComponent implements OnInit {
   openSearch : any = false;
   deleteUserName : any;
   searchText : any;
+  sortDir = 1;
 
   constructor(private userService: UserService) { }
 
@@ -58,5 +59,34 @@ export class ListALLComponent implements OnInit {
     this.tableSize = event.target.value;
     this.page = 1;
     this.getAll();
+  }
+
+  onSortClick(event: any) {
+    let target = event.currentTarget,
+      classList = target.classList;
+
+    if (classList.contains('fa-long-arrow-down')) {
+      classList.remove('fa-long-arrow-down');
+      classList.add('fa-long-arrow-up');
+      this.sortDir = -1;
+    } else {
+      classList.add('fa-long-arrow-down');
+      classList.remove('fa-long-arrow-up');
+      this.sortDir = 1;
+    }
+    this.sortArr('email');
+    this.sortArr('phone');
+    this.sortArr('firstName');
+    this.sortArr('lastName');
+    this.sortArr('phoneNumber');
+    this.sortArr('instrument');
+  }
+
+  sortArr(colName: any) {
+    this.userList.sort((a: any, b: any) => {
+      a = a[colName].toLowerCase();
+      b = b[colName].toLowerCase();
+      return a.localeCompare(b) * this.sortDir;
+    });
   }
 }
