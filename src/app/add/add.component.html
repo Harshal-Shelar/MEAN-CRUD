@@ -96,7 +96,7 @@
         </div>
 
         <div class="submit-center gapTwoBtn">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" [ngClass]="userForm.valid ? '' : 'disableSubmit' ">Submit</button>
             <button type="submit" routerLink="" class="btn btnDanger btn-danger action-btn">Cancel</button>
         </div>
     </form>

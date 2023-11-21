@@ -105,11 +105,11 @@ export class EditComponent implements OnInit {
           const size = file.size;
           if (fileType.includes('image')) {
             if ('|jpg|png|jpeg|'.indexOf(fileExt) === -1) {
-              this.imageSrc = '../../../../assets/img/user_profile.png';
+              this.imageSrc = 'assets/img/user_profile.png';
               this.toastr.error('IMAGE_FORMAT_NOT_SUPPORTED');
               return false;
             } else if (size >= 20185920) { // 20mb
-              this.imageSrc = '../../../../assets/img/user_profile.png';
+              this.imageSrc = 'assets/img/user_profile.png';
               this.toastr.error('IMAGE_SIZE_EXCEED');
               return false;
             } else {
@@ -122,7 +122,7 @@ export class EditComponent implements OnInit {
               return true;
             }
           } else {
-            this.imageSrc = '../../../../assets/img/user_profile.png';
+            this.imageSrc = 'assets/img/user_profile.png';
             this.toastr.error('FILE_FORMAT_NOT_SUPPORTED');
           }
         });

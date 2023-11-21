@@ -9,6 +9,9 @@ form{
     border: 1px dotted white !important;
     color: white !important;
 }
+.disableSubmit{
+    cursor: not-allowed;
+}
 @media (max-width : 767px) {
     .centerImage{
         text-align: center;

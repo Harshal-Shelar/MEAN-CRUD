@@ -18,6 +18,7 @@ export class AddComponent implements OnInit {
   userForm!: FormGroup;
   imageSrc: any;
   formInvalid: any;
+  enableSubmit : any;
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -39,6 +40,7 @@ export class AddComponent implements OnInit {
   }
   addUser() {
     if (this.userForm.valid) {
+      
       const formData = new FormData();
       formData.append('email', this.userForm.value.email);
       formData.append('firstName', this.userForm.value.firstName);
@@ -56,6 +58,7 @@ export class AddComponent implements OnInit {
           this.toastr.error(result.msg);
         }
       });
+      this.enableSubmit = true;
     } else {
       this.formInvalid = true;
       this.toastr.error('Fill all the required fields');

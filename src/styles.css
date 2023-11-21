@@ -147,7 +147,7 @@ form {
     border-radius: 10px !important;
 }
 .btnSecondary:hover{
-    text-shadow: 1px 1px 8px #e2e2e2;
+    text-shadow: 5px 1px 30px #e2e2e2;
     background-color: transparent;
     color: white;
 }
