@@ -11,3 +11,6 @@ form{
     border: 2px solid rgb(17, 172, 255);
     font-size: 20px;
 }
+.disableSubmit{
+    cursor: not-allowed;
+}
