@@ -24,6 +24,7 @@ export class TotalNumberComponent implements OnInit {
   infoAddress: any = [];
   allData : any = [];
   infoLast : any = [];
+  changeName : any;
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -62,6 +63,7 @@ export class TotalNumberComponent implements OnInit {
   showListInfo(name: any) {
     this.showTableInfo = true;
     if (name === "Drums") {
+      this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){
         if (this.userList[i].instrument === "Drums"){
           this.infoName.push(this.userList[i]);
@@ -69,6 +71,7 @@ export class TotalNumberComponent implements OnInit {
       }
     }
     if (name === "Guitar") {
+      this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){
         if (this.userList[i].instrument === "Guitar"){
           this.infoName.push(this.userList[i]);
@@ -76,6 +79,7 @@ export class TotalNumberComponent implements OnInit {
       }
     }
     if (name === "Tabla") {
+      this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){
         if (this.userList[i].instrument === "Tabla"){
           this.infoName.push(this.userList[i]);
@@ -83,6 +87,7 @@ export class TotalNumberComponent implements OnInit {
       }
     }
     if (name === "BeatBox") {
+      this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){
         if (this.userList[i].instrument === "Beatbox"){
           this.infoName.push(this.userList[i]);
@@ -90,6 +95,7 @@ export class TotalNumberComponent implements OnInit {
       }
     }
     if (name === "Piano") {
+      this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){
         if (this.userList[i].instrument === "Piano"){
           this.infoName.push(this.userList[i]);
@@ -98,6 +104,7 @@ export class TotalNumberComponent implements OnInit {
     }
 
     if (name === "Trumpet") {
+      this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){
         if (this.userList[i].instrument === "Trumpet"){
           this.infoName.push(this.userList[i]);
