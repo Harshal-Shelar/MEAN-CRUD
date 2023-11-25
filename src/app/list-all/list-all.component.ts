@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service';
+import { SharedService } from '../service/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-all',
@@ -19,8 +21,14 @@ export class ListALLComponent implements OnInit {
   deleteUserName : any;
   searchText : any;
   sortDir = 1;
+  drums : any = 0;
+  piano : any = 0;
+  guitar : any = 0;
+  trumpet : any = 0;
+  tabla : any = 0;
+  beatbox : any = 0;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router : Router) { }
 
   ngOnInit(): void {
     this.getAll();
@@ -34,6 +42,10 @@ export class ListALLComponent implements OnInit {
 
       }
     });
+  }
+
+  showUserNumber(){
+    this.router.navigate(['/totalNumber']);
   }
 
   deleteUser() {

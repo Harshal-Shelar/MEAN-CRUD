@@ -12,6 +12,9 @@ form{
 .disableSubmit{
     cursor: not-allowed;
 }
+.topMarginSection{
+    margin: 20px 50px;
+}
 @media (max-width : 767px) {
     .centerImage{
         text-align: center;

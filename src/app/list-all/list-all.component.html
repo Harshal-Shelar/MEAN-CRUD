@@ -58,6 +58,9 @@
                 </option>
             </select>
         </div>
+        <div class="showInst">
+            <button class="showInstBtn" (click)="showUserNumber()">Show List With Numbers</button>
+        </div>
         <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
         </pagination-controls>
     </div>

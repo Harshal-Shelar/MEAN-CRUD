@@ -13,6 +13,8 @@ import { UserService } from './service/user.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SharedService } from './service/shared.service';
+import { TotalNumberComponent } from './total-number/total-number.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AddComponent,
     EditComponent,
     ListALLComponent,
-    SearchPipe
+    SearchPipe,
+    TotalNumberComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       }
     ),
   ],
-  providers: [UserService],
+  providers: [UserService, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

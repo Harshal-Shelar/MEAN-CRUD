@@ -81,6 +81,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: 1rem;
+        align-items: center;
 
         .selectPage {
 
@@ -90,6 +91,25 @@
                 border: none;
                 height: 2.5rem;
                 font-size: 20px;
+            }
+        }
+        .showInst{
+            left: 45%;
+            // position: absolute;
+            right: 40%;
+
+            .showInstBtn{
+                padding: 0.5rem;
+                text-align: center;
+                background-color: transparent;
+                border: 2px solid black;
+                border-radius: 10px;
+                font-weight: 500;
+                font-family: "Rubik", sans-serif;
+                margin: 1rem auto;
+            }
+            .showInstBtn:hover{
+                box-shadow: 0px 0px 10px 5px gray;
             }
         }
     }

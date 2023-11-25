@@ -1,13 +1,9 @@
-import {
-  Component, OnInit, ChangeDetectorRef
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../service/user.service';
 import { Location } from '@angular/common';
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import { ToastrService } from 'ngx-toastr';
-
-
 
 @Component({
   selector: 'app-add',
@@ -18,7 +14,7 @@ export class AddComponent implements OnInit {
   userForm!: FormGroup;
   imageSrc: any;
   formInvalid: any;
-  enableSubmit : any;
+  enableSubmit: any;
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -40,7 +36,7 @@ export class AddComponent implements OnInit {
   }
   addUser() {
     if (this.userForm.valid) {
-      
+
       const formData = new FormData();
       formData.append('email', this.userForm.value.email);
       formData.append('firstName', this.userForm.value.firstName);
