@@ -1,15 +1,15 @@
 .list-all {
-    
+    .mainHeading {
+        color: rgb(29, 29, 29);
+        text-align: center;
+        font-family: "Rubik", sans-serif;
+        text-shadow: 1px 1px 8px #e2e2e2;
+    }
     .searchAndAdd {
         display: flex;
         justify-content: space-between;
 
-        .mainHeading {
-            color: rgb(29, 29, 29);
-            text-align: center;
-            font-family: "Rubik", sans-serif;
-            text-shadow: 1px 1px 8px #e2e2e2;
-        }
+        
 
         .searchInput {
             height: 3rem;
@@ -103,7 +103,7 @@
 
         .showInst {
             left: 45%;
-            position: absolute;
+            // position: absolute;
             right: 40%;
 
             .showInstBtn {
