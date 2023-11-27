@@ -74,8 +74,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="phoneNumber">Address</label>
-                    <input type="email" class="form-control" name="address" id="address"
-                        formControlName="address" placeholder="Enter Address #">
+                    <input type="email" class="form-control" name="address" id="address" formControlName="address"
+                        placeholder="Enter Address #">
                     <div class="valErr" *ngIf="hasError('address','required') && formInvalid">Enter Address #
                     </div>
                     <div class="valErr" *ngIf="hasError('address','pattern') && formInvalid">Enter Address #
@@ -85,8 +85,14 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="phoneNumber">Instrument</label>
-                    <input type="email" class="form-control" name="instrument" id="instrument"
-                        formControlName="instrument" placeholder="Enter Instrument #">
+                    <select class="form-control" name="instrument" id="instrument" placeholder="Enter Instrument #"
+                        formControlName="instrument">
+                        <option value="Drums">Drums</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Guitar">Guitar</option>
+                        <option value="Trumpet">Trumpet</option>
+                        <option value="Tabla">Tabla</option>
+                    </select>
                     <div class="valErr" *ngIf="hasError('instrument','required') && formInvalid">Enter Instrument
                     </div>
                     <div class="valErr" *ngIf="hasError('instrument','pattern') && formInvalid">Enter Instrument
@@ -96,7 +102,8 @@
         </div>
 
         <div class="submit-center gapTwoBtn">
-            <button type="submit" class="btn btn-success" [ngClass]="userForm.valid ? '' : 'disableSubmit' ">Submit</button>
+            <button type="submit" class="btn btn-success"
+                [ngClass]="userForm.valid ? '' : 'disableSubmit' ">Submit</button>
             <button type="submit" routerLink="" class="btn btnDanger btn-danger action-btn">Cancel</button>
         </div>
     </form>

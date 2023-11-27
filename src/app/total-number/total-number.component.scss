@@ -107,7 +107,7 @@
         margin: 20px auto;
         padding: 20px;
         background: #fff;
-        border-radius: 10px;
+        border-radius: 20px;
         width: fit-content;
         position: relative;
         transition: all 5s ease-in-out;
@@ -126,23 +126,25 @@
             margin-top: 2rem;
 
             tr {
-                border: 1px solid gray;
 
                 th {
                     font-size: 22px;
                     font-family: "Rubik", sans-serif;
                     color: black;
-                    border: 1px solid gray;
                     padding: 0.5rem;
+                    background-color: white;
                 }
 
                 td {
                     font-family: "Rubik", sans-serif;
                     font-size: 20px;
                     color: rgb(50, 50, 50);
-                    border: 1px solid gray;
                     padding: 0.5rem;
                 }
+            }
+            tr:nth-child(even) {
+                background-color: #dddddd;
+                color: white;
             }
         }
 
@@ -179,7 +181,7 @@
         }
     }
 
-    .totalNumber{
+    .totalNumber {
         width: 90%;
     }
 
@@ -189,7 +191,7 @@
             width: 90%;
             overflow-x: auto;
 
-            h2{
+            h2 {
                 position: fixed;
                 margin-top: 1rem;
                 width: 80%;

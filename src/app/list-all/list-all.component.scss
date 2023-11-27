@@ -36,7 +36,7 @@
 
     .mainTable {
         background-color: rgb(0, 0, 0);
-        border-radius: 5px;
+        border-radius: 15px;
         margin-top: 1rem;
         border-spacing: 0;
         overflow-x: auto;
@@ -58,6 +58,7 @@
                     font-weight: 500;
                     padding: 1rem;
                     text-wrap: nowrap;
+                    background-color: #000000;
                 }
 
                 .fa-long-arrow-up {
@@ -73,6 +74,11 @@
                 color: white;
                 width: fit-content;
                 font-family: "Rubik", sans-serif;
+                align-items: center;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #0d0d0d;
             }
         }
     }
@@ -80,7 +86,7 @@
     .paginationNum {
         display: flex;
         justify-content: space-between;
-        margin-top: 1rem;
+        margin-top: 2rem;
         align-items: center;
 
         .selectPage {
@@ -93,13 +99,14 @@
                 font-size: 20px;
             }
         }
-        .showInst{
-            left: 50%;
-            // position: absolute;
-            right: 50%;
 
-            .showInstBtn{
-                padding: 0.5rem;
+        .showInst {
+            left: 45%;
+            position: absolute;
+            right: 40%;
+
+            .showInstBtn {
+                padding: 0.7rem 0.5rem;
                 text-align: center;
                 background-color: transparent;
                 border: 2px solid black;
@@ -108,7 +115,9 @@
                 font-family: "Rubik", sans-serif;
                 margin: 1rem auto;
             }
-            .showInstBtn:hover{
+
+            .showInstBtn:hover {
+                background-color: white;
                 box-shadow: 0px 0px 10px 5px gray;
             }
         }
