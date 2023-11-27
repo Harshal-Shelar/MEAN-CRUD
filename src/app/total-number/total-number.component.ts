@@ -25,6 +25,7 @@ export class TotalNumberComponent implements OnInit {
   allData : any = [];
   infoLast : any = [];
   changeName : any;
+  hideBtn : any = false;
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -62,6 +63,7 @@ export class TotalNumberComponent implements OnInit {
 
   showListInfo(name: any) {
     this.showTableInfo = true;
+    this.hideBtn = true;
     if (name === "Drums") {
       this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){

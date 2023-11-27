@@ -53,13 +53,15 @@
 </div>
 <div class="overlay" *ngIf="showTableInfo" (click)="closePopup()">
     <div class="popup">
-        <a class="close" (click)="closePopup()">&times;</a>
-        <h2>Students who choosen <span>{{changeName}}</span> </h2>
+        <div style="background-color: white; z-index: 999; width: 100%;">
+            <a class="close" (click)="closePopup(); hideBtn = false">&times;</a>
+            <h2>Students who choosen <span>{{changeName}}</span> </h2>
+            <hr />
+        </div>
         
-        <hr />
-
         <table class="table table-borderless">
             <tr>
+                <th>Profile Image</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Phone Number</th>
@@ -67,6 +69,7 @@
                 <th>Address</th>
             </tr>
             <tr *ngFor="let item of infoName">
+                <td><img src={{item.profileImg}} alt=""></td>
                 <td>{{item.firstName}}</td>
                 <td>{{item.lastName}}</td>
                 <td>{{item.phoneNumber}}</td>
@@ -76,6 +79,6 @@
         </table>
     </div>
 </div>
-<div class="showFullList">
+<div class="showFullList" [ngClass]=" hideBtn ? 'hideBtn' : '' ">
     <button (click)="showFullList()"> <i class="fa fa-angle-double-left"></i> Show Full List</button>
 </div>

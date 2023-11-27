@@ -1,7 +1,7 @@
 <section class="list-all">
-    <h2 class="mainHeading">CRUD- MEAN Stack</h2>
     <div class="searchAndAdd">
         <input type="text" class="searchInput" [(ngModel)]="searchText"  placeholder="Search...">
+        <h2 class="mainHeading">CRUD- MEAN Stack</h2>
         <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
             Add New User <i class="fa fa-user-plus"></i>
         </button>
@@ -43,7 +43,7 @@
                             <button type="button" class="btn btn-secondary action-btn"
                                 [routerLink]="[ '/edit', user._id ]">Edit</button>
                             <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
-                                data-target="#myModal" (click)="selectUser(user)">Delete</button>
+                                (click)="selectUser(user)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
@@ -72,7 +72,7 @@
             <h4>You want to delete the record of {{deleteUserName}} ?</h4>
             <div class="popupBtns">
                 <button type="cancel" class="btn btn-info" (click)="openPopup = false">Cancel</button>
-                <button type="button" class="btn btn-danger action-btn" (click)="deleteUser()">Delete</button>
+                <button type="button" class="btn btn-danger action-btn" (click)="deleteUser();openPopup = false">Delete</button>
             </div>
         </div>
     </div>
