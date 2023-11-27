@@ -113,6 +113,9 @@
         transition: all 5s ease-in-out;
         z-index: 999;
 
+        hr{
+            margin: 1rem 0 !important;
+        }
         h2 {
             text-align: center;
             font-family: "Rubik", sans-serif;
@@ -123,7 +126,7 @@
         }
 
         table {
-            margin-top: 2rem;
+            margin-top: 1rem;
 
             tr {
 
@@ -190,6 +193,10 @@
         .popup {
             width: 90%;
             overflow-x: auto;
+            hr{
+                display: none;
+                visibility: hidden;
+            }
 
             h2 {
                 position: fixed;
