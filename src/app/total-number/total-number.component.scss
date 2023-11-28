@@ -68,7 +68,7 @@
         .info {
             display: inline;
             text-align: center;
-            
+
 
             h4 {
                 color: white;
@@ -89,9 +89,11 @@
         box-shadow: 0px 0px 15px 4px rgb(232, 232, 232);
     }
 }
-.hideBtn{
+
+.hideBtn {
     display: none;
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -102,83 +104,77 @@
     transition: opacity 500ms;
     visibility: visible;
     opacity: 1;
+}
 
-    .popup {
-        margin: 20px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 20px;
-        width: fit-content;
-        position: relative;
-        transition: all 5s ease-in-out;
-        z-index: 999;
-        overflow: auto;
-        max-height: 90%;
-
-        hr{
-            margin: 1rem 0 !important;
-        }
-        h2 {
+.modal {
+    .modal-dialog {
+        .modal-content {
+            width: max-content;
             text-align: center;
-            font-family: "Rubik", sans-serif;
+            border-radius: 15px;
 
-            span {
-                color: rgb(1, 96, 83);
-            }
-        }
+            .modal-header{
+                .modal-title{
+                    display: flex;
+                    justify-content: space-between;
 
-        table {
-            margin-top: 1rem;
+                    h2 {
+                        text-align: center;
+                        font-family: "Rubik", sans-serif;
+            
+                        span {
+                            color: rgb(1, 96, 83);
+                        }
+                    }
 
-            tr {
-
-                th {
-                    font-size: 22px;
-                    font-family: "Rubik", sans-serif;
-                    color: black;
-                    padding: 0.5rem;
-                    background-color: white;
-                }
-
-                td {
-                    font-family: "Rubik", sans-serif;
-                    font-size: 20px;
-                    color: rgb(50, 50, 50);
-                    padding: 0.5rem;
-
-                    img{
-                        height: 5rem;
-                        width: 5rem;
-                        padding: 0;
+                    .close {
+                        position: absolute;
+                        top: -10px;
+                        right: 10px;
+                        transition: all 200ms;
+                        font-size: 40px;
+                        font-weight: bold;
+                        text-decoration: none;
+                        color: #444444;
+                        cursor: pointer;
                     }
                 }
             }
-            tr:nth-child(even) {
-                background-color: #dddddd;
-                color: white;
+
+            .modal-body {
+                overflow: auto;
+                table {
+                    
+                    tr {
+
+                        th {
+                            font-size: 16px;
+                            font-family: "Rubik", sans-serif;
+                            color: black;
+                            padding: 0.5rem;
+                            background-color: white;
+                        }
+
+                        td {
+                            font-family: "Rubik", sans-serif;
+                            font-size: 16px;
+                            color: rgb(50, 50, 50);
+                            padding: 0.5rem;
+
+                            img {
+                                height: 4rem;
+                                width: 4rem;
+                                padding: 0;
+                            }
+                        }
+                    }
+
+                    tr:nth-child(even) {
+                        background-color: #dddddd;
+                        color: white;
+                    }
+                }
             }
-        }
-
-        .close {
-            position: absolute;
-            top: -10px;
-            right: 10px;
-            transition: all 200ms;
-            font-size: 40px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #444444;
-        }
-
-        .close:hover {
-            color: #000000;
-            cursor: pointer;
-        }
-
-        .content {
-            max-height: fit-content;
-            width: fit-content;
-            overflow: auto;
         }
     }
 }
@@ -190,7 +186,7 @@
         .inst {
             max-width: 250px;
 
-            img{
+            img {
                 height: 10rem;
                 width: 100%;
             }
@@ -201,32 +197,35 @@
         width: 90%;
     }
 
-    .overlay {
+    .modal{
+        .modal-dialog{
+            overflow: auto;
 
-        .popup {
-            width: 90%;
-            overflow-x: auto;
-            
-            hr{
-                display: none;
-                visibility: hidden;
-            }
+            .modal-content{
+                .modal-header{
+                    .modal-title{
+                        position: fixed;
+                        width: 90%;
 
-            h2 {
-                position: fixed;
-                margin-top: 1rem;
-                width: 80%;
-            }
-
-            .close {
-                position: fixed;
-                top: 10px;
-                right: 30px;
-            }
-
-            table {
-                overflow: auto;
-                margin-top: 5rem;
+                        h2{
+                            margin-top: 1rem;
+                            font-size: 24px;
+                        }
+                    }
+                }
+                .modal-body{
+                    overflow: auto;
+                    .table{
+                        overflow: auto;
+                    }
+                }
+                .modal-footer{
+                    left : 0 !important;
+                    position:relative;
+                    bottom: 0;
+                    // margin-top: 1rem;
+                    text-align: left;
+                }
             }
         }
     }

@@ -26,6 +26,7 @@ export class TotalNumberComponent implements OnInit {
   infoLast : any = [];
   changeName : any;
   hideBtn : any = false;
+  displayStyle = "none"; 
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -60,10 +61,22 @@ export class TotalNumberComponent implements OnInit {
       }
     });
   }
+  openPopup() { 
+    this.displayStyle = "block"; 
+  } 
+
+  closePopupNew() { 
+    this.displayStyle = "none"; 
+    this.showTableInfo = false;
+    this.infoName = [];
+    this.infoLast = [];
+  }
 
   showListInfo(name: any) {
     this.showTableInfo = true;
     this.hideBtn = true;
+    this.displayStyle = "block";
+
     if (name === "Drums") {
       this.changeName = name;
       for(let i = 0; i < this.userList.length ; i++){
@@ -113,12 +126,6 @@ export class TotalNumberComponent implements OnInit {
         }
       }
     }
-  }
-
-  closePopup(){
-    this.showTableInfo = false;
-    this.infoName = [];
-    this.infoLast = [];
   }
 
   showFullList(){
