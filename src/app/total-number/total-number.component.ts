@@ -24,6 +24,7 @@ export class TotalNumberComponent implements OnInit {
   displayStyle = "none"; 
   selectedUser: any;
   deleteUserName : any;
+  openPopup : any;
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -58,21 +59,18 @@ export class TotalNumberComponent implements OnInit {
       }
     });
   }
-  openPopup() { 
-    this.displayStyle = "block"; 
-  } 
 
-  closePopupNew() { 
-    this.displayStyle = "none"; 
+  closePopupNew() {
     this.showTableInfo = false;
     this.infoName = [];
     this.hideBtn = false;
+    this.openPopup= false;
   }
 
   showListInfo(name: any) {
     this.showTableInfo = true;
     this.hideBtn = true;
-    this.displayStyle = "block";
+    this.openPopup = true;
 
     if (name === "Drums") {
       this.changeName = name;

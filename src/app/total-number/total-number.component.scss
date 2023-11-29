@@ -112,48 +112,61 @@
     color: white;
 }
 
-.modal {
-    .modal-dialog {
-        .modal-content {
-            width: max-content;
-            text-align: center;
-            border-radius: 15px;
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
 
-            .modal-header {
-                .modal-title {
-                    display: flex;
-                    justify-content: space-between;
+    .popup {
+        margin: 5rem auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        width: fit-content;
+        position: relative;
+        transition: all 5s ease-in-out;
+        z-index: 999;
+        text-align: -webkit-center;
 
-                    h2 {
-                        text-align: center;
-                        font-family: "Rubik", sans-serif;
+        .content {
+            width: fit-content;
+            max-height: 550px;
 
-                        span {
-                            color: rgb(1, 96, 83);
-                        }
-                    }
+            h4 {
+                color: #333;
+                font-family: "Rubik", sans-serif;
+                text-align: center;
+                width: 100%;
+                z-index: 999;
+                position: relative;
 
-                    .close {
-                        position: absolute;
-                        top: -10px;
-                        right: 10px;
-                        transition: all 200ms;
-                        font-size: 40px;
-                        font-weight: bold;
-                        text-decoration: none;
-                        color: #444444;
-                        cursor: pointer;
-                    }
+                span {
+                    font-size: 25px;
+                    font-weight: 500;
+                    position: relative;
+                    background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 50%);
+                    color: transparent;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    text-align: center;
+                    font-family: "Rubik", sans-serif;
+                    margin-bottom: 2rem;
                 }
             }
 
-            .modal-body {
+            .tableMain {
+                max-height: 420px !important;
                 overflow: auto;
 
-                table {
+                .table {
 
                     tr {
-
                         th {
                             font-size: 16px;
                             font-family: "Rubik", sans-serif;
@@ -168,6 +181,16 @@
                             color: rgb(50, 50, 50);
                             padding: 0.5rem;
 
+                            .borderGray {
+                                border: 2px solid #505050;
+                                color: #505050;
+                            }
+
+                            .borderRed {
+                                border: 2px solid rgb(255, 0, 0);
+                                color: rgb(255, 0, 0);
+                            }
+
                             img {
                                 height: 4rem;
                                 width: 4rem;
@@ -180,6 +203,38 @@
                         background-color: #dddddd;
                         color: white;
                     }
+                }
+            }
+
+
+            .popupBtns {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 2rem;
+
+                .searchBtn {
+                    align-items: center;
+                    background-image: linear-gradient(144deg, #553c9a, #ee4b2b 1%, #553c9a);
+                    border: 0;
+                    border-radius: 8px;
+                    box-sizing: border-box;
+                    color: #ffffff;
+                    display: flex;
+                    gap: 0.5rem;
+                    font-family: "Rubik", sans-serif;
+                    font-size: 18px;
+                    justify-content: center;
+                    line-height: 0.5rem 1em;
+                    max-width: 100%;
+                    min-width: 140px;
+                    padding: 1rem 0.5rem;
+                    text-decoration: none;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    white-space: nowrap;
+                    cursor: pointer;
                 }
             }
         }
@@ -204,43 +259,97 @@
         width: 90%;
     }
 
-    .modal {
-        .modal-dialog {
-            // overflow: auto;
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 500ms;
+        visibility: visible;
+        opacity: 1;
 
-            .modal-content {
-                // overflow-x: scroll;
+        .popup {
+            margin: 5rem auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            width: fit-content;
+            position: relative;
+            transition: all 5s ease-in-out;
+            z-index: 999;
+            text-align: -webkit-center;
 
-                .modal-header {
-                    .modal-title {
-                        position: fixed;
-                        width: 90%;
+            .close {
+                position: absolute;
+                top: -19px;
+                right: 7px;
+                transition: all 200ms;
+                font-size: 50px;
+                font-weight: bold;
+                text-decoration: none;
+                color: #333;
+            }
 
-                        h2 {
-                            margin-top: 1rem;
-                            font-size: 24px;
-                        }
+            .close:hover {
+                color: #000000;
+                cursor: pointer;
+            }
+
+            .content {
+                max-height: fit-content;
+                width: fit-content;
+                overflow: auto;
+
+                h4 {
+                    margin-top: 2rem;
+                    color: #333;
+                    font-family: "Rubik", sans-serif;
+                    text-align: center;
+                }
+
+                .popupBtns {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1rem;
+                    margin-top: 2rem;
+
+                    .searchBtn {
+                        align-items: center;
+                        background-image: linear-gradient(144deg, #553c9a, #ee4b2b 1%, #553c9a);
+                        border: 0;
+                        border-radius: 8px;
+                        box-sizing: border-box;
+                        color: #ffffff;
+                        display: flex;
+                        gap: 0.5rem;
+                        font-family: "Rubik", sans-serif;
+                        font-size: 18px;
+                        justify-content: center;
+                        line-height: 0.5rem 1em;
+                        max-width: 100%;
+                        min-width: 140px;
+                        padding: 1rem 0.5rem;
+                        text-decoration: none;
+                        user-select: none;
+                        -webkit-user-select: none;
+                        touch-action: manipulation;
+                        white-space: nowrap;
+                        cursor: pointer;
                     }
                 }
 
-                .modal-body {
-                    overflow-y: initial !important;
-
-                    .table {
-                        overflow: hidden;
-                        overflow-y: scroll;
-                        // height: 100px;
-                    }
-                }
-
-                .modal-footer {
-                    left: 0 !important;
-                    position: relative;
-                    bottom: 0;
-                    // margin-top: 1rem;
-                    text-align: left;
+                .mobSearch {
+                    width: 100%;
+                    text-align: center;
+                    border-radius: 7px;
+                    border: 1px solid gray;
+                    height: 2.7rem;
+                    margin-top: 1rem;
                 }
             }
         }
     }
+
 }

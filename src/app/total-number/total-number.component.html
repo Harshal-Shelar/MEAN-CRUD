@@ -55,16 +55,12 @@
 <div class="showFullList" [ngClass]=" hideBtn ? 'hideBtn' : '' ">
     <button (click)="showFullList()"> <i class="fa fa-angle-double-left"></i> Show Full List</button>
 </div>
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" [ngClass]=" showTableInfo ? 'overlay' : '' ">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    <h2>Students who choosen <span>{{changeName}}</span></h2>
-                    
-                </h4>
-            </div>
-            <div class="modal-body">
+
+<div class="overlay" *ngIf="openPopup">
+    <div class="popup">
+        <div class="content">
+            <h4>Students who choosen <span>{{changeName}}</span> </h4>
+            <div class="tableMain">
                 <table class="table table-borderless">
                     <tr>
                         <th>Profile Image</th>
@@ -83,19 +79,17 @@
                         <td>{{item.email}}</td>
                         <td>{{item.address}}</td>
                         <td scope="row" style="display: flex; gap: 0.5rem;">
-                            <button type="button" class="btn btn-secondary action-btn"
+                            <button type="button" class="btn btn-secondary action-btn borderGray"
                                 [routerLink]="[ '/edit', item._id ]">Edit</button>
-                            <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
+                            <button type="button" class="btn btn-danger action-btn borderRed" data-toggle="modal"
                                 (click)="selectUser(item)">Delete</button>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div class="modal-footer"> 
-                <button type="button" class="btn btn-danger colorWhite" 
-                        (click)="closePopupNew()">Close 
-                </button> 
-              </div>
+            <div class="popupBtns">
+                <button type="cancel" class="btn btn-info searchBtn" (click)="closePopupNew()">Cancel</button>
+            </div>
         </div>
     </div>
 </div>
