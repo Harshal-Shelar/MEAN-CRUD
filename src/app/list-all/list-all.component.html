@@ -1,14 +1,18 @@
 <section class="list-all">
     <h2 class="mainHeading">CRUD- MEAN Stack</h2>
     <div class="searchAndAdd">
-        <input type="text" class="searchInput" [(ngModel)]="searchText"  placeholder="Search...">
-        <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
-            Add New User <i class="fa fa-user-plus"></i>
-        </button>
+        <input type="text" class="searchInput" [(ngModel)]="searchText" placeholder="Search...">
+        <div class="topButtons">
+            <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
+                Add New User <i class="fa fa-user-plus"></i>
+            </button>
+            <button class="showInstBtn" (click)="showUserNumber()">Show List With Numbers</button>
+        </div>
     </div>
     <div class="topIcons">
         <i class="fa fa-search searchIcon" (click)="openSearch = true"></i>
         <i class="fa fa-user-plus addUserIcon" [routerLink]="[ '/add']"></i>
+        <i class="fa fas fa-users addUserIcon" [routerLink]="[ '/totalNumber']"></i>
     </div>
     <div class="row mainTable">
         <div class="col-md-12">
@@ -16,12 +20,18 @@
                 <thead>
                     <tr>
                         <th scope="col">Profile Image</th>
-                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;First name</th>
-                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Last name</th>
-                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Address</th>
-                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Email</th>
-                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Phone number</th>
-                        <th scope="col"><i (click)="onSortClick($event)" class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Instrument</th>
+                        <th scope="col"><i (click)="onSortClick($event)"
+                                class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;First name</th>
+                        <th scope="col"><i (click)="onSortClick($event)"
+                                class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Last name</th>
+                        <th scope="col"><i (click)="onSortClick($event)"
+                                class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Address</th>
+                        <th scope="col"><i (click)="onSortClick($event)"
+                                class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Email</th>
+                        <th scope="col"><i (click)="onSortClick($event)"
+                                class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Phone number</th>
+                        <th scope="col"><i (click)="onSortClick($event)"
+                                class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;Instrument</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -51,6 +61,9 @@
         </div>
     </div>
     <div class="paginationNum">
+        <pagination-controls class="paginationMain" previousLabel="Prev" nextLabel="Next"
+            (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
         <div class="selectPage">
             <select (change)="onTableSizeChange($event)">
                 <option *ngFor="let size of tableSizes">
@@ -58,11 +71,6 @@
                 </option>
             </select>
         </div>
-        <div class="showInst">
-            <button class="showInstBtn" (click)="showUserNumber()">Show List With Numbers</button>
-        </div>
-        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-        </pagination-controls>
     </div>
 </section>
 
@@ -72,7 +80,8 @@
             <h4>You want to delete the record of {{deleteUserName}} ?</h4>
             <div class="popupBtns">
                 <button type="cancel" class="btn btn-info" (click)="openPopup = false">Cancel</button>
-                <button type="button" class="btn btn-danger action-btn" (click)="deleteUser();openPopup = false">Delete</button>
+                <button type="button" class="btn btn-danger action-btn"
+                    (click)="deleteUser();openPopup = false">Delete</button>
             </div>
         </div>
     </div>
@@ -81,7 +90,7 @@
 <div class="overlay" *ngIf="openSearch">
     <div class="popup">
         <div class="content">
-            <input type="text" class="mobSearch"  [(ngModel)]="searchText" placeholder="Search...">
+            <input type="text" class="mobSearch" [(ngModel)]="searchText" placeholder="Search...">
             <div class="popupBtns">
                 <button type="cancel" class="btn btn-success" (click)="openSearch = false">Show Result</button>
             </div>

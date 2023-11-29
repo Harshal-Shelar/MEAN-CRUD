@@ -19,14 +19,11 @@ export class TotalNumberComponent implements OnInit {
   totalNumber: any;
   showTableInfo: any;
   infoName: any = [];
-  infoLastName : any = [];
-  infoPhoneNumber : any = [];
-  infoAddress: any = [];
-  allData : any = [];
-  infoLast : any = [];
   changeName : any;
   hideBtn : any = false;
   displayStyle = "none"; 
+  selectedUser: any;
+  deleteUserName : any;
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -69,7 +66,7 @@ export class TotalNumberComponent implements OnInit {
     this.displayStyle = "none"; 
     this.showTableInfo = false;
     this.infoName = [];
-    this.infoLast = [];
+    this.hideBtn = false;
   }
 
   showListInfo(name: any) {
@@ -132,4 +129,9 @@ export class TotalNumberComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  selectUser(user:any) {
+    this.selectedUser = user;
+    this.deleteUserName = user.firstName;
+    return this.displayStyle = 'block';
+  }
 }

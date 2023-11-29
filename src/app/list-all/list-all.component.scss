@@ -1,27 +1,53 @@
 .list-all {
     .mainHeading {
-        color: rgb(29, 29, 29);
+        font-size: 50px;
+        font-weight: 600;
+        background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
         text-align: center;
-        font-family: "Rubik", sans-serif;
-        text-shadow: 1px 1px 8px #e2e2e2;
     }
+
     .searchAndAdd {
         display: flex;
         justify-content: space-between;
 
-        
-
         .searchInput {
             height: 3rem;
             border-radius: 10px;
-            color: rgb(3, 3, 3);
+            color: black;
             border: none;
             font-family: "Rubik", sans-serif;
+            background-color: #eaeaea;
         }
 
         .searchInput:focus {
             box-shadow: 0px 0px 10px 5px gray;
         }
+
+        .topButtons {
+            display: flex;
+            gap: 1rem;
+
+            .showInstBtn {
+                padding: 0.7rem 0.5rem;
+                text-align: center;
+                background-color: transparent;
+                border: 2px solid #b8b8b8;
+                border-radius: 10px;
+                font-weight: 500;
+                font-family: "Rubik", sans-serif;
+                color: #b8b8b8;
+            }
+
+            .showInstBtn:hover {
+                background-color: white;
+                color: black;
+                border: 2px solid black;
+            }
+        }
+
     }
 
     .topIcons {
@@ -32,16 +58,16 @@
         .searchIcon {
             font-size: 32px;
             margin: 1rem 0 0;
+            color: rgb(149, 149, 149);
         }
     }
 
     .mainTable {
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(26, 26, 26);
         border-radius: 15px;
         margin-top: 1rem;
         border-spacing: 0;
         overflow-x: auto;
-        box-shadow: 5px 5px 10px 5px rgb(54, 54, 54);
         height: auto;
         min-height: 500px;
 
@@ -59,7 +85,7 @@
                     font-weight: 500;
                     padding: 1rem;
                     text-wrap: nowrap;
-                    background-color: #000000;
+                    background-color: rgb(26, 26, 26);
                 }
 
                 .fa-long-arrow-up {
@@ -87,7 +113,7 @@
     .paginationNum {
         display: flex;
         justify-content: space-between;
-        margin-top: 2rem;
+        margin-top: 1rem;
         align-items: center;
 
         .selectPage {
@@ -98,29 +124,14 @@
                 border: none;
                 height: 2.5rem;
                 font-size: 20px;
+                background-color: #eaeaea;
             }
         }
 
-        .showInst {
-            left: 45%;
-            // position: absolute;
-            right: 40%;
-
-            .showInstBtn {
-                padding: 0.7rem 0.5rem;
-                text-align: center;
-                background-color: transparent;
-                border: 2px solid black;
-                border-radius: 10px;
-                font-weight: 500;
-                font-family: "Rubik", sans-serif;
-                margin: 1rem auto;
-            }
-
-            .showInstBtn:hover {
-                background-color: white;
-                box-shadow: 0px 0px 10px 5px gray;
-            }
+        .paginationMain {
+            border-radius: 10px;
+            margin: 0 !important;
+            color: gray;
         }
     }
 }
@@ -194,11 +205,9 @@
     }
 }
 
-@media (min-width : 500px) {
-
+@media (min-width : 729px) {
     .list-all {
         .topIcons {
-
             .addUserIcon,
             .searchIcon {
                 display: none;
@@ -208,11 +217,32 @@
     }
 }
 
-@media (max-width : 767px) {
-    .mainTable {
-        margin-top: 2rem;
-    }
+@media (max-width : 729px) {
+    .list-all {
+        .paginationNum {
+            display: inline;
+            text-align: center;
+            margin-top: 2rem;
 
+            .selectPage {
+                margin: 2rem 0;
+
+                select {
+                    height: 2.5rem;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .searchAndAdd {
+            display: none;
+            visibility: hidden;
+        }
+
+        .mainTable {
+            margin: 2rem 0;
+        }
+    }
     .overlay {
         position: fixed;
         width: 100%;
@@ -224,39 +254,6 @@
         .popup {
             margin: auto;
             width: 90%;
-        }
-    }
-}
-
-@media (max-width : 500px) {
-    .list-all {
-        .paginationNum {
-            display: inline;
-            text-align: center;
-
-            .selectPage {
-                margin: 1rem 0;
-
-                select {
-                    height: 2.5rem;
-                    font-size: 20px;
-                }
-            }
-        }
-
-        .topIcons {
-            .addUserIcon {
-                float: right;
-            }
-        }
-
-        .searchAndAdd {
-            display: none;
-            visibility: hidden;
-        }
-
-        .mainTable {
-            margin-top: 2rem;
         }
     }
 }

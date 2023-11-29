@@ -73,6 +73,7 @@
                         <th>Phone Number</th>
                         <th>Email</th>
                         <th>Address</th>
+                        <th>Actions</th>
                     </tr>
                     <tr *ngFor="let item of infoName">
                         <td><img src={{item.profileImg}} alt=""></td>
@@ -81,6 +82,12 @@
                         <td>{{item.phoneNumber}}</td>
                         <td>{{item.email}}</td>
                         <td>{{item.address}}</td>
+                        <td scope="row" style="display: flex; gap: 0.5rem;">
+                            <button type="button" class="btn btn-secondary action-btn"
+                                [routerLink]="[ '/edit', item._id ]">Edit</button>
+                            <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
+                                (click)="selectUser(item)">Delete</button>
+                        </td>
                     </tr>
                 </table>
             </div>
