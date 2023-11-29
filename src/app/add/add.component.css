@@ -1,9 +1,8 @@
 form{
-    background-color: black;
+    background-color: rgb(26, 26, 26);
     border-radius: 15px;
     padding: 2rem;
-    margin-top: -2rem;
-    box-shadow: 5px 5px 10px 5px rgb(54, 54, 54);
+    margin: -2rem auto 0;
 }
 .ngx-file-drop__content{
     border: 1px dotted white !important;
@@ -16,6 +15,9 @@ form{
     margin: 20px 50px;
 }
 @media (max-width : 767px) {
+    form{
+        width: 90%;
+    }
     .centerImage{
         text-align: center;
     }

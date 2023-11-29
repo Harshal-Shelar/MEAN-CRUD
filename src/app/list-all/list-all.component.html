@@ -1,13 +1,11 @@
 <section class="list-all">
     <h2 class="mainHeading">CRUD- MEAN Stack</h2>
     <div class="searchAndAdd">
+        <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
+            Add New User <i class="fa fa-user-plus"></i>
+        </button>
         <input type="text" class="searchInput" [(ngModel)]="searchText" placeholder="Search...">
-        <div class="topButtons">
-            <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
-                Add New User <i class="fa fa-user-plus"></i>
-            </button>
-            <button class="showInstBtn" (click)="showUserNumber()">Show List With Numbers</button>
-        </div>
+        <button class="showInstBtn" (click)="showUserNumber()">Show List With Numbers</button>
     </div>
     <div class="topIcons">
         <i class="fa fa-search searchIcon" (click)="openSearch = true"></i>
@@ -92,7 +90,7 @@
         <div class="content">
             <input type="text" class="mobSearch" [(ngModel)]="searchText" placeholder="Search...">
             <div class="popupBtns">
-                <button type="cancel" class="btn btn-success" (click)="openSearch = false">Show Result</button>
+                <button type="cancel" class="searchBtn" (click)="openSearch = false">Show Result</button>
             </div>
         </div>
     </div>
