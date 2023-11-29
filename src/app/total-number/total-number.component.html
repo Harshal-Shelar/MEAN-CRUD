@@ -56,7 +56,7 @@
     <button (click)="showFullList()"> <i class="fa fa-angle-double-left"></i> Show Full List</button>
 </div>
 
-<div class="overlay" *ngIf="openPopup">
+<div class="overlay" *ngIf="openPopup" (click)="openPopup = false">
     <div class="popup">
         <div class="content">
             <h4>Students who choosen <span>{{changeName}}</span> </h4>
