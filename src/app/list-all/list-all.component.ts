@@ -27,11 +27,15 @@ export class ListALLComponent implements OnInit {
   trumpet : any = 0;
   tabla : any = 0;
   beatbox : any = 0;
-
+  showSpinner : any; 
   constructor(private userService: UserService, private router : Router) { }
 
   ngOnInit(): void {
-    this.getAll();
+    this.showSpinner = true;
+    setTimeout(()=>{
+      this.showSpinner = false;
+      this.getAll();
+    }, 2000)
   }
 
   getAll() {
@@ -42,6 +46,7 @@ export class ListALLComponent implements OnInit {
 
       }
     });
+    return true;
   }
 
   showUserNumber(){

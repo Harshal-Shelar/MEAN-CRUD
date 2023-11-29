@@ -1,4 +1,5 @@
 <section class="list-all">
+    
     <h2 class="mainHeading">CRUD- MEAN Stack</h2>
     <div class="searchAndAdd">
         <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
@@ -7,7 +8,7 @@
         <input type="text" class="searchInput" [(ngModel)]="searchText" placeholder="Search...">
         <button class="showInstBtn" (click)="showUserNumber()">Show List With Numbers</button>
     </div>
-    <div class="topIcons">
+    <div class="topIcons" >
         <i class="fa fa-search searchIcon" (click)="openSearch = true"></i>
         <i class="fa fa-user-plus addUserIcon" [routerLink]="[ '/add']"></i>
         <i class="fa fas fa-users addUserIcon" [routerLink]="[ '/totalNumber']"></i>
@@ -34,6 +35,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <div class="loader" *ngIf="showSpinner"></div>
                     <tr *ngFor="let user of userList | filter:searchText| paginate
                         : {
                             itemsPerPage: tableSize,

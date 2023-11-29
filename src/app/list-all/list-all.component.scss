@@ -132,6 +132,30 @@
     }
 }
 
+.loader {
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border: 15px solid;
+    border-image: linear-gradient(70deg, #553c9a 50%, #f6531d 10%) 50;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .overlay {
     position: fixed;
     top: 0;
