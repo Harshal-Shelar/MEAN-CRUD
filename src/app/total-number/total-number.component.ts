@@ -35,26 +35,26 @@ export class TotalNumberComponent implements OnInit {
         this.userList = result.data;
         this.totalNumber = this.userList.length;
 
-        for (let i = 0; i < this.userList.length; i++) {
-          if (this.userList[i].instrument === "Drums") {
-            this.drums++;
+        this.userList.map((data:any)=>{
+          if(data.instrument == "Drums"){
+            return this.drums++;
           }
-          if (this.userList[i].instrument === "Piano") {
-            this.piano++;
+          if(data.instrument == "Guitar"){
+            return this.guitar++;
           }
-          if (this.userList[i].instrument === "Beatbox") {
-            this.beatbox++;
+          if(data.instrument == "Trumpet"){
+            return this.trumpet++;
           }
-          if (this.userList[i].instrument === "Trumpet") {
-            this.trumpet++;
+          if(data.instrument == "Piano"){
+            return this.piano++;
           }
-          if (this.userList[i].instrument === "Tabla") {
-            this.tabla++;
+          if(data.instrument == "Tabla"){
+            return this.tabla++;
           }
-          if (this.userList[i].instrument === "Guitar") {
-            this.guitar++;
+          if(data.instrument == "Beatbox"){
+            return this.beatbox++;
           }
-        }
+        })
       } else {
 
       }
@@ -75,52 +75,52 @@ export class TotalNumberComponent implements OnInit {
 
     if (name === "Drums") {
       this.changeName = name;
-      for(let i = 0; i < this.userList.length ; i++){
-        if (this.userList[i].instrument === "Drums"){
-          this.infoName.push(this.userList[i]);
+      this.userList.map((data:any)=>{
+        if(data.instrument === "Drums"){
+          this.infoName.push(data);
         }
-      }
+      })
     }
     if (name === "Guitar") {
       this.changeName = name;
-      for(let i = 0; i < this.userList.length ; i++){
-        if (this.userList[i].instrument === "Guitar"){
-          this.infoName.push(this.userList[i]);
+      this.userList.map((data:any)=>{
+        if(data.instrument === "Guitar"){
+          this.infoName.push(data);
         }
-      }
+      })
     }
     if (name === "Tabla") {
       this.changeName = name;
-      for(let i = 0; i < this.userList.length ; i++){
-        if (this.userList[i].instrument === "Tabla"){
-          this.infoName.push(this.userList[i]);
+      this.userList.map((data:any)=>{
+        if(data.instrument === "Tabla"){
+          this.infoName.push(data);
         }
-      }
+      })
     }
-    if (name === "BeatBox") {
+    if (name === "Beatbox") {
       this.changeName = name;
-      for(let i = 0; i < this.userList.length ; i++){
-        if (this.userList[i].instrument === "Beatbox"){
-          this.infoName.push(this.userList[i]);
+      this.userList.map((data:any)=>{
+        if(data.instrument === "Beatbox"){
+          this.infoName.push(data);
         }
-      }
+      })
     }
     if (name === "Piano") {
       this.changeName = name;
-      for(let i = 0; i < this.userList.length ; i++){
-        if (this.userList[i].instrument === "Piano"){
-          this.infoName.push(this.userList[i]);
+      this.userList.map((data:any)=>{
+        if(data.instrument === "Piano"){
+          this.infoName.push(data);
         }
-      }
+      })
     }
 
     if (name === "Trumpet") {
       this.changeName = name;
-      for(let i = 0; i < this.userList.length ; i++){
-        if (this.userList[i].instrument === "Trumpet"){
-          this.infoName.push(this.userList[i]);
+      this.userList.map((data:any)=>{
+        if(data.instrument === "Trumpet"){
+          this.infoName.push(data);
         }
-      }
+      })
     }
   }
 
