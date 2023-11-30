@@ -81,14 +81,26 @@
                         <td scope="row" style="display: flex; gap: 0.5rem;">
                             <button type="button" class="btn btn-secondary action-btn borderGray"
                                 [routerLink]="[ '/edit', item._id ]">Edit</button>
-                            <button type="button" class="btn btn-danger action-btn borderRed" data-toggle="modal"
-                                (click)="selectUser(item)">Delete</button>
+                            <button type="button" class="btn btn-danger action-btn borderRed"
+                                (click)="selectUser(item); openPopup = true;">Delete</button>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="popupBtns">
                 <button type="cancel" class="btn btn-info searchBtn" (click)="closePopupNew()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlayDelete" *ngIf="openDelete" (click)="openDelete = false">
+    <div class="popup">
+        <div class="content">
+            <h4>You want to delete the record of <span class="deleteName"> {{deleteUserName}}</span> ?</h4>
+            <div class="popupBtns">
+                <button type="cancel" class="btn btn-info" (click)="openDelete = false; openPopup = true;">Cancel</button>
+                <button type="button" class="btn btn-danger action-btn"
+                    (click)="deleteUser()">Delete</button>
             </div>
         </div>
     </div>

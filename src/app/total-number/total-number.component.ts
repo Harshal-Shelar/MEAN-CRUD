@@ -25,6 +25,7 @@ export class TotalNumberComponent implements OnInit {
   selectedUser: any;
   deleteUserName : any;
   openPopup : any;
+  openDelete : any
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -127,9 +128,18 @@ export class TotalNumberComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  deleteUser() {
+    this.userService.deleteUser(this.selectedUser._id).subscribe(result => {
+      if (result) {
+        this.openDelete = false;
+        console.log(result);
+      }
+    });
+  }
+
   selectUser(user:any) {
     this.selectedUser = user;
     this.deleteUserName = user.firstName;
-    return this.displayStyle = 'block';
+    this.openDelete = true;
   }
 }
