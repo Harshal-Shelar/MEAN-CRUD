@@ -168,7 +168,7 @@ label {
     }
 
     section {
-        margin: 50px 30px;
+        margin: 18px 30px;
     }
 
     .submit-center {
@@ -204,6 +204,10 @@ label {
 
     .searchAdd {
         display: inline;
+    }
+    .ngx-pagination{
+        width: 100%;
+        padding-left: 0;
     }
 }
 
