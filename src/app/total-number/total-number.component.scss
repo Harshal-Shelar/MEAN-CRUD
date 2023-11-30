@@ -7,9 +7,8 @@
     width: fit-content;
     padding: 0.5rem 1rem;
     align-items: center;
-    box-shadow: 5px 5px 10px 2px rgb(66, 66, 66);
     overflow-y: auto;
-    background-color: rgb(30, 30, 30);
+    border-bottom: 1px solid rgb(53, 53, 53);
 
     h3 {
         color: white;
@@ -55,9 +54,9 @@
         border-radius: 15px;
         width: 200px;
         margin: 1rem;
-        background-color: rgb(30, 30, 30);
         border: 1px solid rgb(23, 23, 23);
-        box-shadow: 5px 5px 7px 1px rgb(16, 16, 16);
+        background-color: #1e1e1e;
+        // box-shadow: 5px 5px 7px 1px rgb(16, 16, 16);
         cursor: pointer;
 
         img {
