@@ -62,16 +62,6 @@ export class TotalNumberComponent implements OnInit {
     });
   }
 
-  onChange() {
-    if(this.userList.length == 0){
-      this.notMatching = true;
-      console.log("error");
-      
-    }else{
-      this.notMatching = false;
-    }
-  }
-
   closePopupNew() {
     this.showTableInfo = false;
     this.infoName = [];

@@ -60,7 +60,7 @@
     <div class="popup">
         <div class="content">
             <h4>Students who choosen <span>{{changeName}}</span> </h4>
-            <input type="search" class="form-control tableSearch" (change)="onChange()" [(ngModel)]="searchText" placeholder="search....">
+            <input type="search" class="form-control tableSearch" [(ngModel)]="searchText" placeholder="search....">
             <div class="tableMain">
                 <table class="table table-borderless">
                     <tr>
@@ -72,7 +72,6 @@
                         <th>Address</th>
                         <th>Actions</th>
                     </tr>
-                    <span class="notMatching" *ngIf="notMatching">No result found</span>
                     <tr *ngFor="let item of infoName| filter:searchText">
                         <td><img src={{item.profileImg}} alt=""></td>
                         <td>{{item.firstName}}</td>
