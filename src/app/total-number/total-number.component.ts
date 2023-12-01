@@ -19,16 +19,16 @@ export class TotalNumberComponent implements OnInit {
   totalNumber: any;
   showTableInfo: any;
   infoName: any = [];
-  changeName : any;
-  hideBtn : any = false;
-  displayStyle = "none"; 
+  changeName: any;
+  hideBtn: any = false;
   selectedUser: any;
-  deleteUserName : any;
-  openPopup : any;
-  openDelete : any;
-  searchText : any;
+  deleteUserName: any;
+  openPopup: any;
+  openDelete: any;
+  searchText: any;
+  notMatching : any;
 
-  constructor(private userService: UserService, private router : Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.userService.getAllUsers(null).subscribe(result => {
@@ -36,23 +36,23 @@ export class TotalNumberComponent implements OnInit {
         this.userList = result.data;
         this.totalNumber = this.userList.length;
 
-        this.userList.map((data:any)=>{
-          if(data.instrument == "Drums"){
+        this.userList.map((data: any) => {
+          if (data.instrument == "Drums") {
             return this.drums++;
           }
-          if(data.instrument == "Guitar"){
+          if (data.instrument == "Guitar") {
             return this.guitar++;
           }
-          if(data.instrument == "Trumpet"){
+          if (data.instrument == "Trumpet") {
             return this.trumpet++;
           }
-          if(data.instrument == "Piano"){
+          if (data.instrument == "Piano") {
             return this.piano++;
           }
-          if(data.instrument == "Tabla"){
+          if (data.instrument == "Tabla") {
             return this.tabla++;
           }
-          if(data.instrument == "Beatbox"){
+          if (data.instrument == "Beatbox") {
             return this.beatbox++;
           }
         })
@@ -62,11 +62,21 @@ export class TotalNumberComponent implements OnInit {
     });
   }
 
+  onChange() {
+    if(this.userList.length == 0){
+      this.notMatching = true;
+      console.log("error");
+      
+    }else{
+      this.notMatching = false;
+    }
+  }
+
   closePopupNew() {
     this.showTableInfo = false;
     this.infoName = [];
     this.hideBtn = false;
-    this.openPopup= false;
+    this.openPopup = false;
   }
 
   showListInfo(name: any) {
@@ -76,40 +86,40 @@ export class TotalNumberComponent implements OnInit {
 
     if (name === "Drums") {
       this.changeName = name;
-      this.userList.map((data:any)=>{
-        if(data.instrument === "Drums"){
+      this.userList.map((data: any) => {
+        if (data.instrument === "Drums") {
           this.infoName.push(data);
         }
       })
     }
     if (name === "Guitar") {
       this.changeName = name;
-      this.userList.map((data:any)=>{
-        if(data.instrument === "Guitar"){
+      this.userList.map((data: any) => {
+        if (data.instrument === "Guitar") {
           this.infoName.push(data);
         }
       })
     }
     if (name === "Tabla") {
       this.changeName = name;
-      this.userList.map((data:any)=>{
-        if(data.instrument === "Tabla"){
+      this.userList.map((data: any) => {
+        if (data.instrument === "Tabla") {
           this.infoName.push(data);
         }
       })
     }
     if (name === "Beatbox") {
       this.changeName = name;
-      this.userList.map((data:any)=>{
-        if(data.instrument === "Beatbox"){
+      this.userList.map((data: any) => {
+        if (data.instrument === "Beatbox") {
           this.infoName.push(data);
         }
       })
     }
     if (name === "Piano") {
       this.changeName = name;
-      this.userList.map((data:any)=>{
-        if(data.instrument === "Piano"){
+      this.userList.map((data: any) => {
+        if (data.instrument === "Piano") {
           this.infoName.push(data);
         }
       })
@@ -117,15 +127,15 @@ export class TotalNumberComponent implements OnInit {
 
     if (name === "Trumpet") {
       this.changeName = name;
-      this.userList.map((data:any)=>{
-        if(data.instrument === "Trumpet"){
+      this.userList.map((data: any) => {
+        if (data.instrument === "Trumpet") {
           this.infoName.push(data);
         }
       })
     }
   }
 
-  showFullList(){
+  showFullList() {
     this.router.navigate(['/']);
   }
 
@@ -138,7 +148,7 @@ export class TotalNumberComponent implements OnInit {
     });
   }
 
-  selectUser(user:any) {
+  selectUser(user: any) {
     this.selectedUser = user;
     this.deleteUserName = user.firstName;
     this.openDelete = true;

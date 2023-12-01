@@ -167,6 +167,10 @@
                 
                 .table {
 
+                    .notMatching{
+                        left: 50%;
+                        text-align: center;
+                    }
                     tr {
                         th {
                             font-size: 16px;
@@ -280,7 +284,7 @@
                 overflow: auto;
 
                 .tableMain {
-                    margin-top: 2.5rem;
+                    margin-top: 1.5rem;
                     overflow: auto;
                     overflow-x: scroll;
 
