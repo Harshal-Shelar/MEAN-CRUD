@@ -25,7 +25,8 @@ export class TotalNumberComponent implements OnInit {
   selectedUser: any;
   deleteUserName : any;
   openPopup : any;
-  openDelete : any
+  openDelete : any;
+  searchText : any;
 
   constructor(private userService: UserService, private router : Router) { }
 

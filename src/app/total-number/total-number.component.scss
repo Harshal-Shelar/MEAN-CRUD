@@ -40,7 +40,6 @@
         transition: 0.3s;
     }
 }
-
 .otherNumbers {
     width: 900px;
     margin: 0 auto;
@@ -110,12 +109,13 @@
     opacity: 1;
 
     .popup {
-        margin: 5rem auto;
+        margin: 2rem auto;
         padding: 20px;
         background: #fff;
         border-radius: 15px;
         width: max-content;
         max-width: 90%;
+        max-height: 95%;
         position: relative;
         transition: all 5s ease-in-out;
         z-index: 999;
@@ -123,7 +123,7 @@
 
         .content {
             width: fit-content;
-            max-height: 550px;
+            max-height: fit-content;
 
             h4 {
                 color: #333;
@@ -150,10 +150,19 @@
                     margin-bottom: 2rem;
                 }
             }
+            .tableSearch{
+                width: 98%;
+                margin: 1rem auto;
+                background-color: white;
+                border-radius: 10px !important;
+                border: 1px solid rgb(163, 163, 163);
+                box-shadow: 0px 0px 10px 1px rgb(212, 212, 212);
+            }
 
             .tableMain {
                 max-height: 420px !important;
                 overflow: auto;
+                height: 330px;
                 border: 1px solid gray;
                 
                 .table {
@@ -179,10 +188,16 @@
                                 border: 2px solid #505050;
                                 color: #505050;
                             }
+                            .borderGray:hover{
+                                color: white;
+                            }
 
                             .borderRed {
                                 border: 2px solid rgb(255, 0, 0);
                                 color: rgb(255, 0, 0);
+                            }
+                            .borderRed:hover{
+                                color: white;
                             }
 
                             img {
@@ -257,6 +272,7 @@
     .overlay {
         .popup {
             width: 90%;
+            height: fit-content;
 
             .content {
                 max-height: max-content;
