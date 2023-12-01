@@ -11,7 +11,6 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './service/user.service';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SearchPipe } from './search.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SharedService } from './service/shared.service';
 import { TotalNumberComponent } from './total-number/total-number.component';
@@ -22,7 +21,6 @@ import { TotalNumberComponent } from './total-number/total-number.component';
     AddComponent,
     EditComponent,
     ListALLComponent,
-    SearchPipe,
     TotalNumberComponent
   ],
   imports: [
