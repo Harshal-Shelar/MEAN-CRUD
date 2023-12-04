@@ -125,6 +125,30 @@
             width: fit-content;
             max-height: fit-content;
 
+            .has-search {
+                margin: 1rem 0;
+                .form-control {
+                    padding-left: 2.375rem;
+                    background-color: white;
+                    box-shadow: 0px 0px 10px 1px rgb(168, 168, 168);
+                }
+                .form-control-feedback {
+                    position: absolute;
+                    display: block;
+                    width: 2.375rem;
+                    height: 2.375rem;
+                    line-height: 3.1rem;
+                    text-align: center;
+                    pointer-events: none;
+                    color: #585858;
+                    align-items: center;
+                    font-size: 22px;
+                }
+                .form-control:focus{
+                    box-shadow: 0px 0px 10px 5px gray;
+                }
+            }
+
             h4 {
                 color: #333;
                 font-family: "Rubik", sans-serif;
@@ -149,14 +173,6 @@
                     font-family: "Rubik", sans-serif;
                     margin-bottom: 2rem;
                 }
-            }
-            .tableSearch{
-                width: 98%;
-                margin: 1rem auto;
-                background-color: white;
-                border-radius: 10px !important;
-                border: 1px solid rgb(163, 163, 163);
-                box-shadow: 0px 0px 10px 1px rgb(212, 212, 212);
             }
 
             .tableMain {
