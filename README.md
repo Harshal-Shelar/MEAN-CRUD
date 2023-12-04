@@ -1,16 +1,37 @@
 # MEAN-CRUD
 MEAN Crud Application with Image uploading
-![screencapture-localhost-63700-2023-11-24-10_25_31](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/a81a2202-9ace-4334-a77c-216de60bcef0)
-![screencapture-localhost-63700-2023-11-24-10_26_09](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/3a90b6e8-acfb-4f42-84ba-8efe9de51f02)
-![screencapture-localhost-63700-2023-11-24-10_26_29](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/d65b54b6-4e02-4ef7-8100-dc2b0a3e6e29)
-![screencapture-localhost-63700-add-2023-11-24-10_25_45](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/a14c15d2-1d91-4121-b775-3f08efb6d251)
-![screencapture-localhost-63700-edit-64f86d813c583825a8ea93d1-2023-11-24-10_25_56](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/1df84bc0-146b-4571-843e-7b21d41b12f0)
-![screencapture-localhost-63700-2023-11-24-10_27_11](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/01bf5098-f661-4ba1-a895-92ae7b56cd0e)
-![screencapture-localhost-63700-2023-11-24-10_27_19](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/210cb48d-e72d-429d-ae28-bd6a0d196b65)
-![screencapture-localhost-63700-2023-11-24-10_27_59](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/8b82a826-031f-483a-a4ba-ef2f56c604fb)
-![screencapture-localhost-63700-2023-11-24-10_28_20](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/c4834922-98c0-4206-a13b-630a5715a000)
-![screencapture-localhost-63700-add-2023-11-24-10_27_33](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/bc633452-cea4-4ab7-b3c7-2bd26f01b2e0)
-![screencapture-localhost-63700-edit-64f86fe8c9dbcf24143982b4-2023-11-24-10_27_44](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/1c873ef6-618e-4714-a8b2-839f9bcc40a1)
+![screencapture-localhost-4200-2023-12-04-15_18_39](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/6412ac44-c563-4715-a6a6-d8c9c5c1c147)
+
+![screencapture-localhost-4200-add-2023-12-04-15_19_41](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/066c7536-8df4-4790-9ed8-9fbf0a8cdcdb)
+
+![screencapture-localhost-4200-2023-12-04-15_20_53](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/4a2f2010-73b0-44eb-b81c-ca3e02d28eb9)
+
+![screencapture-localhost-4200-totalNumber-2023-12-04-15_21_14](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/eeeced35-2ee9-4042-b098-0919ac31e0d8)
+
+![screencapture-localhost-4200-totalNumber-2023-12-04-15_21_41](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/691ac77f-b23b-49f3-9763-a79f9da9b2e8)
+
+![screencapture-localhost-4200-totalNumber-2023-12-04-15_22_05](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/85132b8d-5e70-47d7-9211-88a39d476dba)
+
+![screencapture-localhost-4200-edit-64f86d813c583825a8ea93d1-2023-12-04-15_22_38](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/c5fe4801-0ae6-43a5-9116-bb9371f997ef)
+
+![image](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/451dd7ab-e268-4c84-9546-c2b90b7f435e)
+
+![screencapture-localhost-4200-2023-12-04-15_24_01](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/9e7da7a9-75f6-4b27-8576-fc2bacaec669)
+
+![screencapture-localhost-4200-add-2023-12-04-15_24_48](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/91b3df9a-5f13-4e0a-b038-1a6f908debe5)
+
+![screencapture-localhost-4200-2023-12-04-15_25_44](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/ae8b29ba-c399-4adb-8d6d-47cb0b68e0f3)
+
+![screencapture-localhost-4200-totalNumber-2023-12-04-15_26_09](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/adea2c95-876f-418f-ab0e-e5b275327791)
+
+![image](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/eca8f21a-3031-4357-ae71-cc3556723a06)
+
+![image](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/6235b41f-544b-4991-94e0-be84e8f9a6e4)
+
+![image](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/37896416-9b7a-4270-a9d6-929d9da58e06)
+
+![screencapture-localhost-4200-totalNumber-2023-12-04-15_27_33](https://github.com/Harshal-Shelar/MEAN-CRUD/assets/58460619/3f0eccc4-d912-430d-bbee-f7559d7200b0)
+
 
 
 
