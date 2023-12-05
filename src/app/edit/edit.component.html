@@ -101,10 +101,10 @@
         </div>
 
         <div class="submit-center gapTwoBtn">
+            <button routerLink="" class="btn btn-secondary action-btn">Cancel</button>
+            <button class="btn btn-danger action-btn" (click)="openPopup = true">Delete</button>
             <button type="submit" class="btn btn-success"
                 [ngClass]="userForm.valid ? '' : 'disableSubmit' ">Submit</button>
-            <button class="btn btn-danger action-btn" (click)="openPopup = true">Delete</button>
-            <button routerLink="" class="btn btn-secondary action-btn">Cancel</button>
         </div>
     </form>
 </section>
