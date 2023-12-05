@@ -16,8 +16,14 @@
     }
 
     h1 {
-        color: yellow;
-        font-family: "pridimedium";
+        font-size: 40px;
+        font-weight: 500;
+        background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 50%, #553c9a 20%);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+        font-family: "Rubik", sans-serif;
     }
 }
 
@@ -29,7 +35,7 @@
     button {
         padding: 10px;
         border: 3px solid;
-        border-image: linear-gradient(60deg, #553c9a 50%, #ee4b2b 0) 20;
+        border-image: linear-gradient(60deg, #553c9a 60%, #ee4b2b 0) 20;
         background: transparent;
         font-family: "Rubik", sans-serif;
         color: white;
@@ -54,8 +60,7 @@
         width: 200px;
         margin: 1rem;
         border: 1px solid rgb(23, 23, 23);
-        background-color: #1e1e1e;
-        // box-shadow: 5px 5px 7px 1px rgb(16, 16, 16);
+        background-color: #151515;
         cursor: pointer;
 
         img {
