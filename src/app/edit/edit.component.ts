@@ -145,11 +145,6 @@ export class EditComponent implements OnInit {
     // Gets called when you leave a file-drop.
   }
 
-  selectDelete() {
-    this.deleteName;
-    this.openPopup = true;
-  }
-
   deleteRec() {
     this.userService.deleteUser(this.deleteUserId).subscribe(result => {
       if (result) {
