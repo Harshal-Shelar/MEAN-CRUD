@@ -19,7 +19,6 @@ export class EditComponent implements OnInit {
   openPopup: any;
   selectedUser: any;
   deleteName : any;
-  deleteUserId : any;
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -41,7 +40,6 @@ export class EditComponent implements OnInit {
     });
 
     this.userId = this.route.snapshot.params.id;
-    this.deleteUserId = this.userId;
     this.getUser();
   }
 
@@ -146,7 +144,7 @@ export class EditComponent implements OnInit {
   }
 
   deleteRec() {
-    this.userService.deleteUser(this.deleteUserId).subscribe(result => {
+    this.userService.deleteUser(this.userId).subscribe(result => {
       if (result) {
         this.location.back();
       }
