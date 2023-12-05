@@ -27,6 +27,7 @@ export class TotalNumberComponent implements OnInit {
   openDelete: any;
   searchText: any;
   notMatching : any;
+  instArray = ["Drums", "Piano", "Guitar", "Trumpet", "Beatbox", "Tabla"]
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -38,21 +39,27 @@ export class TotalNumberComponent implements OnInit {
 
         this.userList.map((data: any) => {
           if (data.instrument == "Drums") {
+            this.infoName.push(data);
             return this.drums++;
           }
           if (data.instrument == "Guitar") {
+            this.infoName.push(data);
             return this.guitar++;
           }
           if (data.instrument == "Trumpet") {
+            this.infoName.push(data);
             return this.trumpet++;
           }
           if (data.instrument == "Piano") {
+            this.infoName.push(data);
             return this.piano++;
           }
           if (data.instrument == "Tabla") {
+            this.infoName.push(data);
             return this.tabla++;
           }
           if (data.instrument == "Beatbox") {
+            this.infoName.push(data);
             return this.beatbox++;
           }
         })

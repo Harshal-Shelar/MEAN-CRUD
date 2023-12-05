@@ -1,0 +1,88 @@
+form{
+    background-color: rgb(26, 26, 26);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: -2rem auto 0;
+}
+.btn-primary{
+    background-color: transparent;
+    color: rgb(17, 172, 255);
+    border: 2px solid rgb(17, 172, 255);
+    font-size: 20px;
+}
+.disableSubmit{
+    cursor: not-allowed;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
+
+    .popup {
+        margin: 5rem auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        width: fit-content;
+        position: relative;
+        transition: all 5s ease-in-out;
+        z-index: 999;
+        text-align: -webkit-center;
+
+        .content {
+            max-height: fit-content;
+            width: fit-content;
+            overflow: auto;
+
+            h4 {
+                margin: 1rem 0;
+                color: #333;
+                font-family: "Rubik", sans-serif;
+                text-align: center;
+            }
+
+            .popupBtns {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 2rem;
+
+                .searchBtn {
+                    align-items: center;
+                    background-image: linear-gradient(144deg, #553c9a, #ee4b2b 1%, #553c9a);
+                    border: 0;
+                    border-radius: 8px;
+                    box-sizing: border-box;
+                    color: #ffffff;
+                    display: flex;
+                    gap: 0.5rem;
+                    font-family: "Rubik", sans-serif;
+                    font-size: 18px;
+                    justify-content: center;
+                    line-height: 0.5rem 1em;
+                    max-width: 100%;
+                    min-width: 140px;
+                    padding: 1rem 0.5rem;
+                    text-decoration: none;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    white-space: nowrap;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+@media (max-width : 767px) {
+    form{
+        width: 90%;
+        margin-top: 0.5rem;
+    }
+}

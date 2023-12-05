@@ -14,6 +14,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SharedService } from './service/shared.service';
 import { TotalNumberComponent } from './total-number/total-number.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TotalNumberComponent } from './total-number/total-number.component';
     NgxFileDropModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     ToastrModule.forRoot(

@@ -9,13 +9,17 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
   userForm!: FormGroup;
   userId: any;
   imageSrc: any;
   profileImgToUpload !: File;
+  openPopup: any;
+  selectedUser: any;
+  deleteName : any;
+  deleteUserId : any;
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -35,10 +39,12 @@ export class EditComponent implements OnInit {
       phoneNumber: [null, [Validators.required, Validators.pattern('[0-9]{10}')]],
       profileImg: [null]
     });
-    
+
     this.userId = this.route.snapshot.params.id;
+    this.deleteUserId = this.userId;
     this.getUser();
   }
+
 
   editUser() {
     if (this.userForm.valid) {
@@ -57,7 +63,6 @@ export class EditComponent implements OnInit {
       this.userService.editUser(this.userId, formData).subscribe(result => {
         if (result.status) {
           this.toastr.success(result.msg);
-          this.location.back();
         } else {
           this.toastr.error(result.msg);
         }
@@ -74,8 +79,8 @@ export class EditComponent implements OnInit {
 
   getUser() {
     this.userService.getUser(this.userId).subscribe(result => {
-      console.log("user form :- ", result.data.profileImg);
       if (result.status) {
+        this.deleteName = result.data.firstName;
         this.userForm.patchValue({
           email: result.data.email,
           firstName: result.data.firstName,
@@ -131,12 +136,26 @@ export class EditComponent implements OnInit {
       }
     }
   }
-  
-  fileOver(event:any) {
+
+  fileOver(event: any) {
     // Gets called after a file-drop.
   }
 
-  fileLeave(event:any) {
+  fileLeave(event: any) {
     // Gets called when you leave a file-drop.
   }
+
+  selectDelete() {
+    this.deleteName;
+    this.openPopup = true;
+  }
+
+  deleteRec() {
+    this.userService.deleteUser(this.deleteUserId).subscribe(result => {
+      if (result) {
+        this.location.back();
+      }
+    });
+  }
+
 }
