@@ -16,16 +16,13 @@ export class TotalNumberComponent implements OnInit {
   tabla: any = 0;
   beatbox: any = 0;
   userList: any = [];
-  showTableInfo: any;
   infoName: any = [];
   changeName: any;
-  hideBtn: any = false;
   selectedUser: any;
   deleteUserName: any;
-  openPopup: any;
-  openDelete: any;
+  openPopup: any = false;
+  openDelete: any = false;
   searchText: any;
-  notMatching: any;
   instArray : any;
 
   constructor(private userService: UserService, private router: Router) { }
@@ -92,15 +89,11 @@ export class TotalNumberComponent implements OnInit {
   }
 
   closePopupNew() {
-    this.showTableInfo = false;
     this.infoName = [];
-    this.hideBtn = false;
     this.openPopup = false;
   }
 
   showListInfo(name: any) {
-    this.showTableInfo = true;
-    this.hideBtn = true;
     this.openPopup = true;
 
     if (name === "Drums") {
