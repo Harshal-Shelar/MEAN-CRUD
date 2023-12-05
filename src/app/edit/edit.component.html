@@ -85,12 +85,7 @@
                     <label for="phoneNumber">Instrument</label>
                     <select class="form-control" name="instrument" id="instrument" placeholder="Enter Instrument #"
                         formControlName="instrument">
-                        <option value="Drums">Drums</option>
-                        <option value="Piano">Piano</option>
-                        <option value="Guitar">Guitar</option>
-                        <option value="Trumpet">Trumpet</option>
-                        <option value="Tabla">Tabla</option>
-                        <option value="Beatbox">Beatbox</option>
+                        <option *ngFor="let item of instArray" value={{item.value}}>{{item.name}}</option>
                     </select>
                     <div class="valErr" *ngIf="hasError('instrument','required')">Enter Instrument
                     </div>

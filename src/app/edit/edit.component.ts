@@ -19,6 +19,14 @@ export class EditComponent implements OnInit {
   openPopup: any;
   selectedUser: any;
   deleteName : any;
+  instArray = [
+    {value : "Drums", name : "Drums"},
+    {value : "Piano", name : "Piano"},
+    {value : "Tabla", name : "Tabla"},
+    {value : "Trumpet", name : "Trumpet"},
+    {value : "Guitar", name : "Guitar"},
+    {value : "Beatbox", name : "Beatbox"}
+  ]
 
   constructor(
     private cd: ChangeDetectorRef,
