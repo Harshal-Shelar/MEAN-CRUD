@@ -85,4 +85,12 @@ form{
         width: 90%;
         margin-top: 0.5rem;
     }
+    
+}
+@media (max-width : 580px) {
+    .overlay{
+        .popup{
+            width: 85%;
+        }
+    }
 }
