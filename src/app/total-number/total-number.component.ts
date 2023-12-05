@@ -16,7 +16,6 @@ export class TotalNumberComponent implements OnInit {
   tabla: any = 0;
   beatbox: any = 0;
   userList: any = [];
-  totalNumber: any;
   showTableInfo: any;
   infoName: any = [];
   changeName: any;
@@ -35,31 +34,24 @@ export class TotalNumberComponent implements OnInit {
     this.userService.getAllUsers(null).subscribe(result => {
       if (result) {
         this.userList = result.data;
-        this.totalNumber = this.userList.length;
 
         this.userList.map((data: any) => {
           if (data.instrument == "Drums") {
-            this.infoName.push(data);
             return this.drums++;
           }
           if (data.instrument == "Guitar") {
-            this.infoName.push(data);
             return this.guitar++;
           }
           if (data.instrument == "Trumpet") {
-            this.infoName.push(data);
             return this.trumpet++;
           }
           if (data.instrument == "Piano") {
-            this.infoName.push(data);
             return this.piano++;
           }
           if (data.instrument == "Tabla") {
-            this.infoName.push(data);
             return this.tabla++;
           }
           if (data.instrument == "Beatbox") {
-            this.infoName.push(data);
             return this.beatbox++;
           }
         })

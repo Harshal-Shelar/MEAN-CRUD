@@ -8,13 +8,21 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
   userForm!: FormGroup;
   imageSrc: any;
   formInvalid: any;
   enableSubmit: any;
+  instArray = [
+    {value : "Drums", name : "Drums"},
+    {value : "Piano", name : "Piano"},
+    {value : "Tabla", name : "Tabla"},
+    {value : "Trumpet", name : "Trumpet"},
+    {value : "Guitar", name : "Guitar"},
+    {value : "Beatbox", name : "Beatbox"}
+  ]
 
   constructor(
     private cd: ChangeDetectorRef,
