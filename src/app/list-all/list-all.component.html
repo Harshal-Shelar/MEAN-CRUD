@@ -51,7 +51,14 @@
                         <td scope="row">{{user.address}}</td>
                         <td scope="row">{{user.email}}</td>
                         <td scope="row">{{user.phoneNumber}}</td>
-                        <td scope="row">{{user.instrument}}</td>
+                        <td scope="row">
+                            <span *ngIf="user.instrument == 'Drums' " style="color: red;">{{user.instrument}}</span>
+                            <span *ngIf="user.instrument == 'Piano' " style="color: yellow;">{{user.instrument}}</span>
+                            <span *ngIf="user.instrument == 'Tabla' " style="color: green;">{{user.instrument}}</span>
+                            <span *ngIf="user.instrument == 'Trumpet' " style="color: blue;">{{user.instrument}}</span>
+                            <span *ngIf="user.instrument == 'Beatbox' " style="color: purple;">{{user.instrument}}</span>
+                            <span *ngIf="user.instrument == 'Guitar' " style="color:honeydew;">{{user.instrument}}</span>
+                        </td>
                         <td scope="row" style="display: flex; gap: 0.5rem;">
                             <button type="button" class="btn btn-secondary action-btn"
                                 [routerLink]="[ '/edit', user._id ]">Edit</button>

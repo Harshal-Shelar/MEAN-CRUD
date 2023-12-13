@@ -3,12 +3,13 @@
     <h1>{{userList.length}}</h1>
 </div>
 <div class="otherNumbers">
-    <div class="inst" *ngFor="let item of instArray" (click)="showListInfo(item.name)">
+    <div class="inst" *ngFor="let item of instArray">
         <img src={{item.imgSrc}} alt="">
         <div class="info">
             <h4>{{item.name}}</h4>
             <h1>{{item.total}}</h1>
         </div>
+        <button class="showListBtn" (click)="showListInfo(item.name)">Show List</button>
     </div>
 </div>
 
