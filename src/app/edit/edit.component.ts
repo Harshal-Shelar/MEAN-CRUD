@@ -69,7 +69,6 @@ export class EditComponent implements OnInit {
       this.userService.editUser(this.userId, formData).subscribe(result => {
         if (result.status) {
           this.toastr.success(result.msg);
-          this.location.back();
         } else {
           this.toastr.error(result.msg);
         }
@@ -154,7 +153,7 @@ export class EditComponent implements OnInit {
 
   deleteRec() {
     this.userService.deleteUser(this.userId).subscribe(result => {
-      if (result) {
+      if (result.status) {
         this.location.back();
       }
     });
