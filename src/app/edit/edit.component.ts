@@ -69,6 +69,7 @@ export class EditComponent implements OnInit {
       this.userService.editUser(this.userId, formData).subscribe(result => {
         if (result.status) {
           this.toastr.success(result.msg);
+          this.location.back();
         } else {
           this.toastr.error(result.msg);
         }
