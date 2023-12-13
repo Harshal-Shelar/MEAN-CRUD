@@ -27,7 +27,8 @@ export class ListALLComponent implements OnInit {
   trumpet : any = 0;
   tabla : any = 0;
   beatbox : any = 0;
-  showSpinner : any; 
+  showSpinner : any;
+  
   constructor(private userService: UserService, private router : Router) { }
 
   ngOnInit(): void {

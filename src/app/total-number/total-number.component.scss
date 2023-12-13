@@ -46,6 +46,7 @@
         transition: 0.3s;
     }
 }
+
 .otherNumbers {
     width: 900px;
     margin: 0 auto;
@@ -102,6 +103,7 @@
 .colorWhite {
     color: white;
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -132,11 +134,13 @@
 
             .has-search {
                 margin: 1rem 0;
+
                 .form-control {
                     padding-left: 2.375rem;
                     background-color: white;
                     box-shadow: 0px 0px 10px 1px rgb(168, 168, 168);
                 }
+
                 .form-control-feedback {
                     position: absolute;
                     display: block;
@@ -149,7 +153,8 @@
                     align-items: center;
                     font-size: 22px;
                 }
-                .form-control:focus{
+
+                .form-control:focus {
                     box-shadow: 0px 0px 10px 5px gray;
                 }
             }
@@ -162,7 +167,7 @@
                 z-index: 999;
                 position: relative;
 
-                .deleteName{
+                .deleteName {
                     color: red;
                 }
 
@@ -184,14 +189,15 @@
                 max-height: 420px !important;
                 overflow: auto;
                 height: 330px;
-                border: 1px solid gray;
-                
+                border: 1px solid white;
+
                 .table {
 
-                    .notMatching{
+                    .notMatching {
                         left: 50%;
                         text-align: center;
                     }
+
                     tr {
                         th {
                             font-size: 16px;
@@ -213,7 +219,8 @@
                                 border: 2px solid #505050;
                                 color: #505050;
                             }
-                            .borderGray:hover{
+
+                            .borderGray:hover {
                                 color: white;
                             }
 
@@ -221,7 +228,8 @@
                                 border: 2px solid rgb(255, 0, 0);
                                 color: rgb(255, 0, 0);
                             }
-                            .borderRed:hover{
+
+                            .borderRed:hover {
                                 color: white;
                             }
 
@@ -293,6 +301,7 @@
         width: 90%;
     }
 }
+
 @media (max-width : 1037px) {
     .overlay {
         .popup {
@@ -336,4 +345,23 @@
             }
         }
     }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
