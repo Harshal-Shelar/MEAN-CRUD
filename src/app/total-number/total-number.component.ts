@@ -16,7 +16,7 @@ export class TotalNumberComponent implements OnInit {
   tabla: any = 0;
   beatbox: any = 0;
   userList: any = [];
-  infoName: any = [];
+  instName: any = [];
   changeName: any;
   selectedUser: any;
   deleteUserName: any;
@@ -94,7 +94,7 @@ export class TotalNumberComponent implements OnInit {
   } 
 
   closePopupNew() {
-    this.infoName = [];
+    this.instName = [];
     this.openPopup = false;
   }
 
@@ -105,7 +105,7 @@ export class TotalNumberComponent implements OnInit {
       this.changeName = name;
       this.userList.map((data: any) => {
         if (data.instrument === "Drums") {
-          this.infoName.push(data);
+          this.instName.push(data);
         }
       })
     }
@@ -113,7 +113,7 @@ export class TotalNumberComponent implements OnInit {
       this.changeName = name;
       this.userList.map((data: any) => {
         if (data.instrument === "Guitar") {
-          this.infoName.push(data);
+          this.instName.push(data);
         }
       })
     }
@@ -121,7 +121,7 @@ export class TotalNumberComponent implements OnInit {
       this.changeName = name;
       this.userList.map((data: any) => {
         if (data.instrument === "Tabla") {
-          this.infoName.push(data);
+          this.instName.push(data);
         }
       })
     }
@@ -129,7 +129,7 @@ export class TotalNumberComponent implements OnInit {
       this.changeName = name;
       this.userList.map((data: any) => {
         if (data.instrument === "Beatbox") {
-          this.infoName.push(data);
+          this.instName.push(data);
         }
       })
     }
@@ -137,7 +137,7 @@ export class TotalNumberComponent implements OnInit {
       this.changeName = name;
       this.userList.map((data: any) => {
         if (data.instrument === "Piano") {
-          this.infoName.push(data);
+          this.instName.push(data);
         }
       })
     }
@@ -146,7 +146,7 @@ export class TotalNumberComponent implements OnInit {
       this.changeName = name;
       this.userList.map((data: any) => {
         if (data.instrument === "Trumpet") {
-          this.infoName.push(data);
+          this.instName.push(data);
         }
       })
     }
