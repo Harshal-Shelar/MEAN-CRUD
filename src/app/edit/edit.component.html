@@ -107,7 +107,7 @@
 <div class="overlay" *ngIf="openPopup">
     <div class="popup">
         <div class="content">
-            <h4>You want to delete the record of {{deleteName}}?</h4>
+            <h4>You want to delete the record of <span> {{deleteName}}</span> ?</h4>
             <div class="popupBtns">
                 <button type="cancel" class="btn btn-info" (click)="openPopup = false">Cancel</button>
                 <button type="button" class="btn btn-danger action-btn" (click)="deleteRec()">Delete</button>
