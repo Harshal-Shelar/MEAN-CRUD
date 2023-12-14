@@ -28,6 +28,7 @@ export class TotalNumberComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    
     this.userService.getAllUsers(null).subscribe(result => {
       if (result) {
         this.userList = result.data;
@@ -87,6 +88,10 @@ export class TotalNumberComponent implements OnInit {
       ]
     });
   }
+
+  compare (a1:any, a2:any) {
+    a1.filter((v:any) => this.userList.instrument.includes(v)).length;
+  } 
 
   closePopupNew() {
     this.infoName = [];
