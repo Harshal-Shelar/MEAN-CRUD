@@ -188,6 +188,19 @@
         }
     }
 }
+.ngx-pagination {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 15px;
+    border: 1px solid rgb(129, 129, 129);
+
+    .current{
+        background-color: #ee4b2b !important;
+    }
+    a{
+        border-right: 1px solid gray;
+    }
+}
 @media (max-width : 729px) {
     .overlay {
         position: fixed;
@@ -207,7 +220,6 @@
         }
     }
 }
-
 @media (max-width : 1037px) {
     .overlay {
         .popup {
