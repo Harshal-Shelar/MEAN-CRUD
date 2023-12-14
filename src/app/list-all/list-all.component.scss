@@ -182,98 +182,7 @@
     }
 }
 
-.overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: visible;
-    opacity: 1;
 
-    .popup {
-        margin: 5rem auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 15px;
-        width: fit-content;
-        position: relative;
-        transition: all 5s ease-in-out;
-        z-index: 999;
-        text-align: -webkit-center;
-
-        .close {
-            position: absolute;
-            top: -19px;
-            right: 7px;
-            transition: all 200ms;
-            font-size: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .close:hover {
-            color: #000000;
-            cursor: pointer;
-        }
-
-        .content {
-            max-height: fit-content;
-            width: fit-content;
-            overflow: auto;
-
-            h4 {
-                margin-top: 2rem;
-                color: #333;
-                font-family: "Rubik", sans-serif;
-                text-align: center;
-            }
-
-            .popupBtns {
-                display: flex;
-                justify-content: center;
-                gap: 1rem;
-                margin-top: 2rem;
-
-                .searchBtn {
-                    align-items: center;
-                    background-image: linear-gradient(144deg, #553c9a, #ee4b2b 1%, #553c9a);
-                    border: 0;
-                    border-radius: 8px;
-                    box-sizing: border-box;
-                    color: #ffffff;
-                    display: flex;
-                    gap: 0.5rem;
-                    font-family: "Rubik", sans-serif;
-                    font-size: 18px;
-                    justify-content: center;
-                    line-height: 0.5rem 1em;
-                    max-width: 100%;
-                    min-width: 140px;
-                    padding: 1rem 0.5rem;
-                    text-decoration: none;
-                    user-select: none;
-                    -webkit-user-select: none;
-                    touch-action: manipulation;
-                    white-space: nowrap;
-                    cursor: pointer;
-                }
-            }
-
-            .mobSearch {
-                width: 100%;
-                text-align: center;
-                border-radius: 7px;
-                border: 1px solid gray;
-                height: 2.7rem;
-                margin-top: 1rem;
-            }
-        }
-    }
-}
 
 @media (min-width : 729px) {
     .list-all {
@@ -317,20 +226,6 @@
 
         .mainTable {
             margin: 2rem 0;
-        }
-    }
-
-    .overlay {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .popup {
-            margin: auto;
-            width: 90%;
         }
     }
 
