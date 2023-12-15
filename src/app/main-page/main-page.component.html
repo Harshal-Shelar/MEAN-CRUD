@@ -1,6 +1,30 @@
 <h2>MEAN Stack CRUD</h2>
 <div class="otherNumbers">
-    <div class="inst" *ngFor="let item of mainPageList" routerLink="{{item.router}}">
-        <h4>{{item.name}}</h4>
+    <div class="inst" routerLink="/add">
+        <h4>Add New User</h4>
+    </div>
+    <div class="inst" routerLink="/list">
+        <h4>Show Full List</h4>
+    </div>
+    <div class="inst" routerLink="/totalNumber">
+        <h4>Total Numbers</h4>
+    </div>
+    <div class="inst" (click)="openPopup = true">
+        <h4>About Project</h4>
+    </div>
+</div>
+<div class="overlay" *ngIf="openPopup" (click)="openPopup = false">
+    <div class="popup aboutPopupWidth">
+        <div class="content">
+            <h3>About This Project</h3>
+            <ul class="aboutList">
+                <li *ngFor="let item of mainPageList">
+                    <span>{{item.name}}</span>
+                </li>
+            </ul>
+            <div class="popupBtns">
+                <button type="cancel" class="btn btn-info searchBtn" (click)="openPopup = false">Cancel</button>
+            </div>
+        </div>
     </div>
 </div>

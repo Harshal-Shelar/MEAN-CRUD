@@ -8,8 +8,9 @@
     transition: opacity 500ms;
     visibility: visible;
     opacity: 1;
+    font-family: "Rubik", sans-serif;
 
-    .deletePopup{
+    .deletePopup {
         width: 600px !important;
         margin: 10rem auto !important;
     }
@@ -29,6 +30,25 @@
             max-height: fit-content;
             width: fit-content;
             overflow: auto;
+
+            h3{
+                background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 40%, #553c9a 20%);
+                color: transparent;
+                background-clip: text; 
+            }
+            .aboutList {
+                text-align: left;
+                height: 400px;
+                overflow:auto; 
+                max-height: 400px;  
+                box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.2); 
+
+                li {
+                    text-align: left;
+                    margin: 0.7rem 0;
+                    list-style:decimal;
+                }
+            }
 
             .tableMain {
                 max-height: 420px !important;
@@ -188,19 +208,22 @@
         }
     }
 }
+
 .ngx-pagination {
     width: 100%;
     padding: 10px 5px;
     border-radius: 15px;
     background-color: rgb(26, 26, 26);
 
-    .current{
+    .current {
         background-color: #ee4b2b !important;
     }
-    a{
+
+    a {
         border-right: 1px solid gray;
     }
 }
+
 @media (max-width : 729px) {
     .overlay {
         position: fixed;
@@ -210,7 +233,7 @@
         justify-content: center;
         align-items: center;
 
-        .deletePopup{
+        .deletePopup {
             width: 90% !important;
         }
 
@@ -220,12 +243,17 @@
         }
     }
 }
+
 @media (max-width : 1037px) {
+    .aboutPopupWidth{
+        width: 80% !important;
+    }
     .overlay {
         .popup {
             width: 90%;
             height: fit-content;
 
+            
             .content {
                 max-height: max-content;
                 width: 100%;
@@ -266,8 +294,8 @@
 }
 
 @media (max-width : 580px) {
-    .overlay{
-        .popup{
+    .overlay {
+        .popup {
             width: 85%;
         }
     }
