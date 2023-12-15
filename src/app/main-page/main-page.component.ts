@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  openPopup : any;
   mainPageList : any =[
     {name: 'Add New User', router : '/add'},
     {name: 'Show Full List', router : '/list'},

@@ -143,15 +143,14 @@
         display: flex;
         justify-content: space-between;
         margin-top: 1rem;
-        align-items: center;
 
         .selectPage {
 
             select {
                 width: 100px;
-                border-radius: 10px;
+                border-radius: 15px;
                 border: none;
-                height: 2.5rem;
+                height: 2.9rem;
                 font-size: 20px;
                 background-color: #eaeaea;
             }
