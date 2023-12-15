@@ -1,0 +1,62 @@
+h2 {
+    background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%);
+    color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 50px;
+}
+
+.mainPage {
+    margin: 3rem auto;
+    width: 1000px;
+    text-align: center;
+
+    .innerClass{
+        display: inline-flex;
+        gap: 2rem;
+
+        .addNewUser {
+            background-color: #283350;
+        }
+    
+        .showFullList {
+            background-color: #f93800;
+        }
+    
+        .showUserNumber {
+            background-color: #a100a6;
+        }
+    
+        .addNewUser,
+        .showFullList,
+        .showUserNumber {
+            height: 15rem;
+            width: 15rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-family: "Rubik", sans-serif;
+    
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                margin-top: 6.5rem;
+                font-weight: bold;
+                flex-wrap: wrap;
+                font-size: 22px;
+                letter-spacing: 1px;
+            }
+        }
+    
+        .addNewUser:hover,
+        .showFullList:hover,
+        .showUserNumber:hover {
+            box-shadow: 0px 0px 20px 15px rgb(78, 78, 78);
+            transition: 0.5s;
+            height: 16rem;
+            width: 16rem;
+        }
+    }
+}

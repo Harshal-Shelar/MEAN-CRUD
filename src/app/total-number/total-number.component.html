@@ -2,6 +2,10 @@
     <h3>Total Number of Students</h3>
     <h1>{{userList.length}}</h1>
 </div>
+<div class="showFullList">
+    <button routerLink="/homePage"> <i class="fa fa-angle-double-left"></i> Open Home Page</button>
+    <button routerLink="/list"> Show Full List <i class="fa fa-angle-double-right"></i></button>
+</div>
 <div class="otherNumbers">
     <div class="inst" *ngFor="let item of instArray">
         <img src={{item.imgSrc}} alt="">
@@ -13,9 +17,7 @@
     </div>
 </div>
 
-<div class="showFullList">
-    <button (click)="showFullList()"> <i class="fa fa-angle-double-left"></i> Show Full List</button>
-</div>
+
 
 <div class="overlay" *ngIf="openPopup">
     <div class="popup">

@@ -196,7 +196,7 @@ label {
     }
 
     .width100 {
-        width: 100% !important;
+        /* width: 100% !important; */
         text-align: left;
     }
 

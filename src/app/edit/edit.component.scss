@@ -4,6 +4,11 @@ form{
     padding: 2rem;
     margin: -2rem auto 0;
 }
+.upperBtns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .btn-primary{
     background-color: transparent;
     color: rgb(17, 172, 255);

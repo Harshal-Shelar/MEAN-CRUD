@@ -153,7 +153,7 @@ export class TotalNumberComponent implements OnInit {
   }
 
   showFullList() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/list']);
   }
 
   deleteUser() {

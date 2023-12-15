@@ -30,7 +30,10 @@
 .showFullList {
     text-align: center;
     position: relative;
-    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 670px;
+    margin: 1rem auto;
 
     button {
         padding: 10px;

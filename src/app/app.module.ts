@@ -15,6 +15,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SharedService } from './service/shared.service';
 import { TotalNumberComponent } from './total-number/total-number.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AddComponent,
     EditComponent,
     ListALLComponent,
-    TotalNumberComponent
+    TotalNumberComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

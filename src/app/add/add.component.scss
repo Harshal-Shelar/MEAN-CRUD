@@ -8,6 +8,11 @@ form{
     border: 1px dotted white !important;
     color: white !important;
 }
+.upperBtns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .disableSubmit{
     cursor: not-allowed;
 }
