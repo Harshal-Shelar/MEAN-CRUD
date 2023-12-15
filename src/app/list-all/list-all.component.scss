@@ -124,6 +124,13 @@
                 display: flex; 
                 gap: 1rem; 
                 align-items: center;
+
+                .btn-secondary{
+
+                    i{
+                        color: white;       
+                    }
+                }
             }
 
             tr:nth-child(odd) {

@@ -57,13 +57,13 @@
                             <span *ngIf="user.instrument == 'Tabla' " style="color: green;">{{user.instrument}}</span>
                             <span *ngIf="user.instrument == 'Trumpet' " style="color: blue;">{{user.instrument}}</span>
                             <span *ngIf="user.instrument == 'Beatbox' " style="color: purple;">{{user.instrument}}</span>
-                            <span *ngIf="user.instrument == 'Guitar' " style="color:honeydew;">{{user.instrument}}</span>
+                            <span *ngIf="user.instrument == 'Guitar' " style="color:crimson;">{{user.instrument}}</span>
                         </td>
                         <td scope="row" class="actionBtns">
                             <button type="button" class="btn btn-secondary action-btn"
-                                [routerLink]="[ '/edit', user._id ]">Edit</button>
+                                [routerLink]="[ '/edit', user._id ]"> <i class="fa fa-pencil"></i> Edit</button>
                             <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
-                                (click)="selectUser(user)">Delete</button>
+                                (click)="selectUser(user)"> <i class="fa fa-trash"></i> Delete</button>
                         </td>
                     </tr>
                 </tbody>
