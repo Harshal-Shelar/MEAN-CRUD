@@ -136,6 +136,19 @@
     .totalNumber {
         width: 90%;
     }
+    .showFullList{
+        width: 80%;
+    }
+}
+@media (max-width : 400px) {
+    .showFullList{
+        display: block;
+
+        button{
+            width: 90%;
+            margin: 0.5rem 0;
+        }
+    }
 }
 
 ::-webkit-scrollbar {
