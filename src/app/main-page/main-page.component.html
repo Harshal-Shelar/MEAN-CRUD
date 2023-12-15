@@ -1,14 +1,8 @@
 <h2>MEAN Stack CRUD</h2>
 <div class="mainPage">
     <div class="innerClass">
-        <div class="addNewUser" routerLink="/add">
-            <span>Add New User</span>
-        </div>
-        <div class="showFullList" routerLink="/list">
-            <span>Show Full List</span>
-        </div>
-        <div class="showUserNumber" routerLink="/totalNumber">
-            <span>Total Numbers</span>
+        <div *ngFor="let item of mainPageList" class="circleMain" routerLink="{{item.router}}">
+            <span>{{item.name}}</span>
         </div>
     </div>
 </div>

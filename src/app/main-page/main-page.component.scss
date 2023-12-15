@@ -16,27 +16,16 @@ h2 {
         display: inline-flex;
         gap: 2rem;
 
-        .addNewUser {
-            background-color: #283350;
-        }
-    
-        .showFullList {
-            background-color: #f93800;
-        }
-    
-        .showUserNumber {
-            background-color: #a100a6;
-        }
-    
-        .addNewUser,
-        .showFullList,
-        .showUserNumber {
+        .circleMain {
             height: 15rem;
             width: 15rem;
             border-radius: 50%;
             cursor: pointer;
+            margin: 0 auto;
+            background-color: #283350;
+            margin: 0 2rem;
             font-family: "Rubik", sans-serif;
-    
+
             span {
                 display: flex;
                 align-items: center;
@@ -49,14 +38,34 @@ h2 {
                 letter-spacing: 1px;
             }
         }
-    
-        .addNewUser:hover,
-        .showFullList:hover,
-        .showUserNumber:hover {
-            box-shadow: 0px 0px 20px 15px rgb(78, 78, 78);
+
+        .circleMain:hover {
+            box-shadow: 0px 0px 20px 15px #35446e;
             transition: 0.5s;
             height: 16rem;
             width: 16rem;
+            border: 1px solid white;
         }
+    }
+}
+
+@media (max-width : 1000px) {
+    .mainPage {
+        text-align: center;
+        margin: 0 auto;
+        width: 90%;
+
+        .innerClass {
+            display: grid;
+            text-align: center;
+
+            .circleMain {
+                box-shadow: 10px 10px 10px 1px rgb(36, 36, 36);
+            }
+        }
+    }
+
+    h2 {
+        font-size: 40px;
     }
 }

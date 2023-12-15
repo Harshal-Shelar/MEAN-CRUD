@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  mainPageList : any =[
+    {name: 'Add New User', router : '/add'},
+    {name: 'Show Full List', router : '/list'},
+    {name: 'Total Numbers', router : '/totalNumber'}
+  ]
   constructor() { }
 
   ngOnInit(): void {

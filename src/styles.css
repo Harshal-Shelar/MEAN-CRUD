@@ -117,6 +117,9 @@ label {
     color: white;
     font-size: 17px;
     font-family: "Rubik", sans-serif;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
 }
 
 .btnSecondary {
@@ -133,6 +136,9 @@ label {
 
 .btn-danger {
     color: red;
+    gap: 0.5rem;
+    align-items: center;
+    display: flex;
 }
 
 .btn-success {
@@ -208,7 +214,7 @@ label {
         width: 100%;
         padding: 10px 5px;
         border-radius: 25px;
-        border: 1px solid rgb(129, 129, 129);
+        /* border: 1px solid rgb(129, 129, 129); */
     }
 }
 
