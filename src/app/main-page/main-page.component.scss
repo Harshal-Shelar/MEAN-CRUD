@@ -1,10 +1,15 @@
 h2 {
-    background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%);
-    color: transparent;
-    background-clip: text;
+    // background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%);
+    color: rgb(0, 255, 242);
     text-align: center;
     margin-top: 4rem;
     font-size: 50px;
+    text-shadow: rgb(0, 255, 242) 0px 0 5px;
+}
+h2:hover{
+    text-shadow: rgb(0, 255, 242) 0px 0 15px;
+    transition: 0.9s;
+    color: white;
 }
 .aboutPopupWidth{
     width: 600px ;
@@ -39,8 +44,8 @@ h2 {
     }
 
     .inst:hover {
-        box-shadow: 0px 0px 15px 10px rgb(45, 45, 45);
-        transition: 0.3s;
+        box-shadow: 0px 0px 15px 20px rgb(45, 45, 45);
+        transition: 0.9s;
         background-color: white;
         border: 5px solid black;
 
