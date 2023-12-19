@@ -38,9 +38,6 @@ section {
 .col-md-6 {
     margin-top: 1.5rem;
 }
-.row{
-    display: block !important;
-}
 .form-control {
     border-radius: 0 !important;
     height: 3rem;
@@ -233,7 +230,7 @@ label {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 100%, #553c9a 50%);
+    background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 150%, #553c9a 50%);
 }
 
 /* Handle on hover */

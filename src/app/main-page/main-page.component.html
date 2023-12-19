@@ -1,20 +1,23 @@
 <h2>MEAN Stack CRUD</h2>
-<div class="otherNumbers">
-    <div class="row">
-        <div class="inst col-sm-3" routerLink="/add">
-            <h4>Add New User</h4>
+<div class="blockFourMain">
+    <div class="firstLine">
+        <div class="firstBlock" routerLink="/add">
+            <span> <i class="fa fa-user-plus"></i> Add New User</span>
         </div>
-        <div class="inst col-sm-3" routerLink="/list">
-            <h4>Show Full List</h4>
+        <div class="secondBlock" routerLink="/list">
+            <span> <i class="fa fa-server"></i> Show Full List</span>
         </div>
-        <div class="inst col-sm-3" routerLink="/totalNumber">
-            <h4>Total Numbers</h4>
+    </div>
+    <div class="secondLine">
+        <div class="firstBlock" routerLink="/totalNumber">
+            <span> <i class="fa fa-users"></i> Total Numbers</span>
         </div>
-        <div class="inst col-sm-3" (click)="openPopup = true">
-            <h4>About Project</h4>
+        <div class="secondBlock" (click)="openPopup = true">
+            <span> <i class="fa fa-exclamation-circle"></i> About Project</span>
         </div>
     </div>
 </div>
+
 <div class="overlay" *ngIf="openPopup">
     <div class="popup aboutPopupWidth">
         <div class="content">
