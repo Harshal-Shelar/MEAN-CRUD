@@ -162,7 +162,8 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    // background: #afafaf;
+    background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 100%, #553c9a 50%);
 }
 
 /* Handle on hover */

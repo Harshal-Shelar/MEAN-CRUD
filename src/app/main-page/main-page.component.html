@@ -1,19 +1,21 @@
 <h2>MEAN Stack CRUD</h2>
 <div class="otherNumbers">
-    <div class="inst" routerLink="/add">
-        <h4>Add New User</h4>
-    </div>
-    <div class="inst" routerLink="/list">
-        <h4>Show Full List</h4>
-    </div>
-    <div class="inst" routerLink="/totalNumber">
-        <h4>Total Numbers</h4>
-    </div>
-    <div class="inst" (click)="openPopup = true">
-        <h4>About Project</h4>
+    <div class="row">
+        <div class="inst col-sm-3" routerLink="/add">
+            <h4>Add New User</h4>
+        </div>
+        <div class="inst col-sm-3" routerLink="/list">
+            <h4>Show Full List</h4>
+        </div>
+        <div class="inst col-sm-3" routerLink="/totalNumber">
+            <h4>Total Numbers</h4>
+        </div>
+        <div class="inst col-sm-3" (click)="openPopup = true">
+            <h4>About Project</h4>
+        </div>
     </div>
 </div>
-<div class="overlay" *ngIf="openPopup" (click)="openPopup = false">
+<div class="overlay" *ngIf="openPopup">
     <div class="popup aboutPopupWidth">
         <div class="content">
             <h3>About This Project</h3>

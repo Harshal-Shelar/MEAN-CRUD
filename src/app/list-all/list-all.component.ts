@@ -21,12 +21,6 @@ export class ListALLComponent implements OnInit {
   deleteUserName : any;
   searchText : any;
   sortDir = 1;
-  drums : any = 0;
-  piano : any = 0;
-  guitar : any = 0;
-  trumpet : any = 0;
-  tabla : any = 0;
-  beatbox : any = 0;
   showSpinner : any;
   
   constructor(private userService: UserService, private router : Router) { }
@@ -48,10 +42,6 @@ export class ListALLComponent implements OnInit {
       }
     });
     return true;
-  }
-
-  showUserNumber(){
-    this.router.navigate(['/totalNumber']);
   }
 
   deleteUser() {

@@ -152,10 +152,6 @@ export class TotalNumberComponent implements OnInit {
     }
   }
 
-  showFullList() {
-    this.router.navigate(['/list']);
-  }
-
   deleteUser() {
     this.userService.deleteUser(this.selectedUser._id).subscribe(result => {
       if (result) {
