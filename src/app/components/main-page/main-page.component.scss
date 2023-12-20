@@ -9,11 +9,11 @@ h2 {
     font-size: 50px;
 }
 
-// h2:hover {
-//     text-shadow: rgb(0, 255, 242) 0px 0 15px;
-//     transition: 0.9s;
-//     color: white;
-// }
+h2:hover {
+    text-shadow: rgb(0, 255, 242) 0px 0 15px;
+    transition: 0.9s;
+    color: white;
+}
 
 .aboutPopupWidth {
     width: 600px;
@@ -23,7 +23,7 @@ h2 {
     text-align: center;
     margin: 0 auto;
     width: 600px;
-    height: 600px;
+    height: fit-content;
     font-family: "Rubik", sans-serif;
 
     .firstLine {

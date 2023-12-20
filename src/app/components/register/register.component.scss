@@ -1,0 +1,22 @@
+::-webkit-scrollbar {
+    width: 10px;
+    display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: repeating-linear-gradient(to right, #553c9a, #ee4b2b 150%, #553c9a 50%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: #555;
+}
