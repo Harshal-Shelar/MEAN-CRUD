@@ -27,7 +27,4 @@ export class UserService {
   getAllUsers(data:any): Observable<any> {
     return this.http.post(`${url}/all`, data, httpOptions);
   }
-  findByTitle(title: any): Observable<any> {
-    return this.http.get<any>(`${url}?title=${title}`);
-  }
 }
