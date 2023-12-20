@@ -1,20 +1,24 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../service/user.service';
 import { Location } from '@angular/common';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../../service/user.service';
+import { ActivatedRoute } from '@angular/router';
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.scss']
 })
-export class AddComponent implements OnInit {
+export class EditComponent implements OnInit {
   userForm!: FormGroup;
+  userId: any;
   imageSrc: any;
-  formInvalid: any;
-  enableSubmit: any;
+  profileImgToUpload !: File;
+  openPopup: any;
+  selectedUser: any;
+  deleteName : any;
   instArray = [
     {value : "Drums", name : "Drums"},
     {value : "Piano", name : "Piano"},
@@ -26,8 +30,9 @@ export class AddComponent implements OnInit {
 
   constructor(
     private cd: ChangeDetectorRef,
-    private location: Location,
     private toastr: ToastrService,
+    private location: Location,
+    private route: ActivatedRoute,
     private userService: UserService,
     private fb: FormBuilder) { }
 
@@ -39,10 +44,15 @@ export class AddComponent implements OnInit {
       address: [null, Validators.required],
       instrument: [null, Validators.required],
       phoneNumber: [null, [Validators.required, Validators.pattern('[0-9]{10}')]],
-      profileImg: [null, Validators.required]
+      profileImg: [null]
     });
+
+    this.userId = this.route.snapshot.params.id;
+    this.getUser();
   }
-  addUser() {
+
+
+  editUser() {
     if (this.userForm.valid) {
 
       const formData = new FormData();
@@ -52,19 +62,18 @@ export class AddComponent implements OnInit {
       formData.append('address', this.userForm.value.address);
       formData.append('instrument', this.userForm.value.instrument);
       formData.append('phoneNumber', this.userForm.value.phoneNumber);
-      formData.append('profileImg', this.userForm.value.profileImg);
+      if (this.profileImgToUpload) {
+        formData.append('profileImg', this.profileImgToUpload);
+      }
 
-      this.userService.addUser(formData).subscribe((result: any) => {
+      this.userService.editUser(this.userId, formData).subscribe(result => {
         if (result.status) {
-          this.location.back();
           this.toastr.success(result.msg);
         } else {
           this.toastr.error(result.msg);
         }
       });
-      this.enableSubmit = true;
     } else {
-      this.formInvalid = true;
       this.toastr.error('Fill all the required fields');
       return false;
     }
@@ -72,6 +81,28 @@ export class AddComponent implements OnInit {
 
   public hasError = (controlName: string, errorName: string) => {
     return this.userForm.controls[controlName].hasError(errorName);
+  }
+
+  getUser() {
+    this.userService.getUser(this.userId).subscribe(result => {
+      if (result.status) {
+        this.deleteName = result.data.firstName;
+        this.userForm.patchValue({
+          email: result.data.email,
+          firstName: result.data.firstName,
+          lastName: result.data.lastName,
+          address: result.data.address,
+          instrument: result.data.instrument,
+          phoneNumber: result.data.phoneNumber,
+          profileImg: result.data.profileImg
+        });
+        if (result.data.profileImg) {
+          this.imageSrc = result.data.profileImg;
+        }
+      } else {
+      }
+    });
+
   }
 
   dropped(files: NgxFileDropEntry[]) {
@@ -98,9 +129,7 @@ export class AddComponent implements OnInit {
               reader.onload = () => {
                 this.imageSrc = reader.result;
               };
-              this.userForm.patchValue({
-                profileImg: file
-              });
+              this.profileImgToUpload = file;
               return true;
             }
           } else {
@@ -121,4 +150,13 @@ export class AddComponent implements OnInit {
   fileLeave(event: any) {
     // Gets called when you leave a file-drop.
   }
+
+  deleteRec() {
+    this.userService.deleteUser(this.userId).subscribe(result => {
+      if (result.status) {
+        this.location.back();
+      }
+    });
+  }
+
 }

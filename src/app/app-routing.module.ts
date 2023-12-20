@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListALLComponent } from './list-all/list-all.component';
-import { AddComponent } from './add/add.component';
-import { EditComponent } from './edit/edit.component';
-import { TotalNumberComponent } from './total-number/total-number.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { ListALLComponent } from './components/list-all/list-all.component';
+import { AddComponent } from './components/add/add.component';
+import { EditComponent } from './components/edit/edit.component';
+import { TotalNumberComponent } from './components/total-number/total-number.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: MainPageComponent },
