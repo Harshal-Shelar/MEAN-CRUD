@@ -281,7 +281,7 @@ form {
 
     label {
         display: block;
-        margin-top: 30px;
+        margin-top: 20px;
         font-size: 16px;
         font-weight: 500;
     }
@@ -290,8 +290,8 @@ form {
         display: block;
         height: 50px;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.07);
-        border-radius: 3px;
+        background-color: rgba(255, 255, 255);
+        border-radius: 10px;
         padding: 0 10px;
         margin-top: 8px;
         font-size: 14px;
@@ -309,6 +309,8 @@ form {
         display: flex;
         justify-content: space-between;
         gap: 1rem;
+        margin-top: 1rem;
+
         button {
             margin-top: 20px;
             width: 100%;
@@ -320,6 +322,14 @@ form {
             border-radius: 5px;
             cursor: pointer;
             border: none;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+            font-weight: 500;
+            box-shadow: 0px 0px 10px 10px gray;
+            border: 2px solid white;
         }
     }
 
