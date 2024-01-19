@@ -1,9 +1,9 @@
 <section class="addFormSection">
     <div class="upperBtns">
-        <button type="button" class="btn btn-secondary width100 btnSecondary" [routerLink]="[ '/mainPage']">
+        <button type="button" class="btn width100 btnSecondary" [routerLink]="[ '/mainPage']">
             <i class="fa fa-chevron-left"></i> &nbsp;Home Page
         </button>
-        <button type="button" class="btn btn-secondary width100 btnSecondary" [routerLink]="[ '/list']">
+        <button type="button" class="btn width100 btnSecondary" [routerLink]="[ '/list']">
             List Page &nbsp;<i class="fa fa-chevron-right"></i> 
         </button>
     </div>
@@ -102,9 +102,9 @@
         </div>
 
         <div class="submit-center gapTwoBtn">
-            <button type="submit" class="btn btn-success"
+            <button type="submit" class="btn btn-success width50"
                 [ngClass]="userForm.valid ? '' : 'disableSubmit' ">Submit</button>
-            <button type="submit" routerLink="" class="btn btnDanger btn-danger action-btn">Cancel</button>
+            <button type="submit" routerLink="" class="btn btnDanger width50 btn-danger action-btn">Cancel</button>
         </div>
     </form>
 </section>

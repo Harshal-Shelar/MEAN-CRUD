@@ -115,22 +115,7 @@ label {
     border: 2px solid gray;
 }
 
-.btn-secondary {
-    border: 2px solid gray;
-    background-color: gray;
-    color: black;
-    font-size: 17px;
-    font-family: "Rubik", sans-serif;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    padding: 0.5rem 2rem;
-}
-.btn-secondary:hover{
-    background-color: transparent;
-    transition: 0.5s;
-    color: gray;
-}
+
 .btnSecondary {
     border: none !important;
     color: white !important;
@@ -197,7 +182,22 @@ label {
     border: 2px solid green;
     transition: 0.5s;
 }
-
+.btn-secondary {
+    border: 2px solid gray;
+    background-color: gray;
+    color: black;
+    font-size: 17px;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+.btn-secondary:hover{
+    background-color: transparent;
+    transition: 0.5s;
+    color: gray;
+}
 .image-info {
     color: white;
 }
@@ -250,7 +250,7 @@ label {
     }
 
     .addNewSection {
-        margin: 50px 20px;
+        margin: 30px 20px;
     }
 
     .width100 {

@@ -383,7 +383,11 @@ form {
     .background {
         width: 70%;
     }
-
+    .btn-secondary, .btn-danger, .btn-success{
+        width: 30%;
+        padding: 0.5rem 0;
+        display: block;
+    }
     form {
         width: 80%;
         max-height: 90%;
