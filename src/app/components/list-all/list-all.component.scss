@@ -17,7 +17,7 @@
 
         .searchInput {
             height: 3rem;
-            border-radius: 10px;
+            border-radius: 15px;
             color: black;
             border: none;
             font-family: "Rubik", sans-serif;
@@ -27,6 +27,7 @@
         .has-search {
             .form-control {
                 padding-left: 2.375rem;
+                border-radius: 10px;
             }
 
             .form-control-feedback {
@@ -81,11 +82,12 @@
     .mainTable {
         background-color: rgb(26, 26, 26);
         border-radius: 15px;
-        margin-top: 1rem;
+        margin-top: 0.7rem;
         border-spacing: 0;
         overflow-x: auto;
         height: auto;
-        min-height: 500px;
+        min-height:500px;
+        box-shadow: 0px 0px 15px 5px black;
 
         .table {
             --bs-table-bg: none !important;

@@ -64,12 +64,13 @@
         width: 200px;
         margin: 1rem;
         border: 1px solid rgb(23, 23, 23);
-        background-color: #151515;
+        background-color: #0d0d0d;
+        box-shadow: 0px 0px 10px 3px black;
 
         img {
             height: 7rem;
             width: auto;
-            box-shadow: 0px 0px 10px 1px rgb(45, 45, 45);
+            box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
         }
 
         .info {
@@ -106,8 +107,12 @@
     }
 
     .inst:hover {
-        box-shadow: 0px 0px 15px 4px rgb(54, 54, 54);
-        transition: 0.3s;
+        box-shadow: none;
+        transition: 0.5s;
+    }
+
+    .inst:after {
+        transition: 0.5s;
     }
 }
 
@@ -119,6 +124,12 @@
     color: white;
 }
 
+.actionIcons {
+    background-color: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 0.7rem;
+}
 @media (max-width : 767px) {
     .otherNumbers {
         width: 100%;
@@ -136,15 +147,17 @@
     .totalNumber {
         width: 90%;
     }
-    .showFullList{
+
+    .showFullList {
         width: 80%;
     }
 }
+
 @media (max-width : 400px) {
-    .showFullList{
+    .showFullList {
         display: block;
 
-        button{
+        button {
             width: 90%;
             margin: 0.5rem 0;
         }

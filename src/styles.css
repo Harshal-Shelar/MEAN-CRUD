@@ -34,14 +34,19 @@
 section {
     margin: 40px 50px 10px;
 }
-
+.colorRed{
+    color: red !important;
+}
+.colorGray{
+    color: rgb(39, 56, 147) !important;
+}
 .col-md-6 {
     margin-top: 1.5rem;
 }
 .form-control {
     border-radius: 0 !important;
     height: 3rem;
-    border-radius: 5px !important;
+    border-radius: 25px !important;
     font-family: "Rubik", sans-serif;
     background-color: rgb(204, 204, 204);
     margin-top: 0.3rem;
