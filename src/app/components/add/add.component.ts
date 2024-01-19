@@ -4,6 +4,7 @@ import { UserService } from '../../service/user.service';
 import { Location } from '@angular/common';
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -29,6 +30,7 @@ export class AddComponent implements OnInit {
     private location: Location,
     private toastr: ToastrService,
     private userService: UserService,
+    private router : Router,
     private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -63,6 +65,7 @@ export class AddComponent implements OnInit {
         }
       });
       this.enableSubmit = true;
+      this.router.navigate(['/list']);
     } else {
       this.formInvalid = true;
       this.toastr.error('Fill all the required fields');
