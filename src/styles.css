@@ -46,7 +46,7 @@ section {
 .form-control {
     border-radius: 0 !important;
     height: 3rem;
-    border-radius: 25px !important;
+    border-radius: 10px !important;
     font-family: "Rubik", sans-serif;
     background-color: rgb(204, 204, 204);
     margin-top: 0.3rem;
