@@ -58,9 +58,9 @@
                             <span *ngIf="user.instrument == 'Guitar' " style="color:crimson;">{{user.instrument}}</span>
                         </td>
                         <td scope="row" class="actionBtns">
-                            <button type="button" class="btn btn-secondary action-btn"
+                            <button type="button" class="btn tableEdit action-btn"
                                 [routerLink]="[ '/edit', user._id ]"> <i class="fa fa-pencil"></i> Edit</button>
-                            <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
+                            <button type="button" class="btn tableDelete action-btn" data-toggle="modal"
                                 (click)="selectUser(user)"> <i class="fa fa-trash"></i> Delete</button>
                         </td>
                     </tr>

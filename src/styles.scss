@@ -205,6 +205,26 @@
                 height: 2.7rem;
                 margin-top: 1rem;
             }
+            .deleteSuccessContent{
+                display: table-caption;
+                text-align: center;
+                img{
+                    height: 10rem;
+                    width: auto;
+                }
+                span{
+                    text-wrap: nowrap;
+                    font-size: 20px;
+                }
+                .delSucOkBtn{
+                    border: 1px solid green;
+                    background-color: green;
+                    padding: 0.5rem 4rem;
+                    border-radius: 20px;
+                    margin-top: 2rem;
+                    color: white;
+                }
+            }
         }
     }
 }
@@ -276,9 +296,10 @@ form {
 
     label {
         display: block;
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 16px;
         font-weight: 500;
+        letter-spacing: 1px;
     }
 
     input {

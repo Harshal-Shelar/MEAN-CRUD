@@ -63,9 +63,8 @@
         border-radius: 15px;
         width: 200px;
         margin: 1rem;
-        border: 1px solid rgb(23, 23, 23);
-        background-color: #0d0d0d;
-        box-shadow: 0px 0px 10px 3px black;
+        background-color: rgb(23, 23, 23);
+        box-shadow: 0px 0px 15px 2px black;
 
         img {
             height: 7rem;
@@ -108,10 +107,12 @@
 
     .inst:hover {
         box-shadow: none;
+        background-color: black;
         transition: 0.5s;
     }
 
     .inst:after {
+        background-color: black;
         transition: 0.5s;
     }
 }

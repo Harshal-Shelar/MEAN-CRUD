@@ -70,3 +70,14 @@
         </div>
     </div>
 </div>
+<div class="overlay" *ngIf="deleteSuccess">
+    <div class="popup deletePopup">
+        <div class="content">
+            <div class="deleteSuccessContent">
+                <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Circle-512.png" alt="">
+                <span class="delSucText">Data of {{deleteUserName}} deleted Successfully....!</span>
+                <button class="delSucOkBtn" (click)="deleteSuccess = false; openPopup = false">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

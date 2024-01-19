@@ -1,15 +1,15 @@
-<section>
+<section class="addFormSection">
     <div class="upperBtns">
-        <button type="button" class="btn btn-secondary width100 btnSecondary" [routerLink]="[ '/mainPage']">
+        <button type="button" class="btn width100 btnSecondary" [routerLink]="[ '/mainPage']">
             <i class="fa fa-chevron-left"></i> &nbsp;Home Page
         </button>
-        <button type="button" class="btn btn-secondary width100 btnSecondary" [routerLink]="[ '/list']">
+        <button type="button" class="btn width100 btnSecondary" [routerLink]="[ '/list']">
             List Page &nbsp;<i class="fa fa-chevron-right"></i> 
         </button>
     </div>
 </section>
 
-<section>
+<section class="addNewSection">
     <form [formGroup]="userForm" (ngSubmit)="editUser()">
         <div class="row">
             <div class="col-md-6">

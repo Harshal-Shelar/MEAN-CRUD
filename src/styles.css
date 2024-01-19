@@ -116,16 +116,21 @@ label {
 }
 
 .btn-secondary {
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
+    border: 2px solid gray;
+    background-color: gray;
+    color: black;
     font-size: 17px;
     font-family: "Rubik", sans-serif;
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    padding: 0.5rem 2rem;
 }
-
+.btn-secondary:hover{
+    background-color: transparent;
+    transition: 0.5s;
+    color: gray;
+}
 .btnSecondary {
     border: none !important;
     color: white !important;
@@ -134,23 +139,63 @@ label {
 
 .btnSecondary:hover {
     text-shadow: 5px 1px 30px #e2e2e2;
-    background-color: transparent;
+    background-color: transparent !important;
     color: white;
+    transition: 0.5s;
 }
-
-.btn-danger {
+.tableDelete{
+    display: flex;
+    gap: 0.5rem;
+    background-color: transparent;
     color: red;
+    align-items: center;
+    border: 2px solid red;
+}
+.tableDelete:hover{
+    background-color: red;
+    color: white;
+    transition: 0.5s;
+}
+.tableEdit{
+    background-color: transparent;
+    border: 2px solid gray;
+    color: gray;
+    display: flex;
     gap: 0.5rem;
     align-items: center;
-    display: flex;
 }
-
+.tableEdit:hover{
+    background-color: gray;
+    color: black;
+    transition: 0.5s;
+}
+.btn-danger {
+    color: white;
+    font-size: 17px;
+    letter-spacing: 1px;
+    padding: 0.5rem 2rem;
+    background-color: red;
+}
+.btn-danger:hover{
+    background-color: transparent;
+    transition: 0.3s;
+    color: red;
+    border: 2px solid red;
+}
 .btn-success {
     border: 2px solid green;
-    background-color: transparent;
-    color: green;
+    background-color: green;
+    color: white;
+    letter-spacing: 1px;
+    padding: 0.5rem 2rem;
     font-size: 17px;
     font-family: "Rubik", sans-serif;
+}
+.btn-success:hover{
+    background-color: transparent;
+    color: green;
+    border: 2px solid green;
+    transition: 0.5s;
 }
 
 .image-info {
@@ -168,7 +213,9 @@ label {
     display: flex;
     margin-top: 2rem;
 }
-
+.addNewSection {
+    margin: 10px 50px;
+}
 @media (max-width : 500px) {
     .addUserBtn {
         display: none;

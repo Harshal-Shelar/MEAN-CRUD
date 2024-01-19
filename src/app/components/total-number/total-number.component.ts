@@ -23,12 +23,18 @@ export class TotalNumberComponent implements OnInit {
   openPopup: any = false;
   openDelete: any = false;
   searchText: any;
-  instArray : any;
+  instArray: any;
+  deleteSuccess : any;
+
+  instArrayList: any = ['Tabla', 'Piano', 'Guitar', 'Trumpet', 'Drums', 'Beatbox']
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    
+    this.instArrayList.map((myData : any)=>{
+      console.log("inst array list :- ", myData);
+    });
+
     this.userService.getAllUsers(null).subscribe(result => {
       if (result) {
         this.userList = result.data;
@@ -53,45 +59,41 @@ export class TotalNumberComponent implements OnInit {
             return this.beatbox++;
           }
         })
-      } 
+      }
       this.instArray = [
         {
           imgSrc: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJ1bXN8ZW58MHx8MHx8fDA%3D",
           name: "Drums",
-          total : this.drums
+          total: this.drums
         },
-        { 
-          imgSrc: "https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?cs=srgb&dl=pexels-juan-pablo-serrano-arenas-1246437.jpg&fm=jpg", 
-          name: "Piano" ,
-          total : this.piano
+        {
+          imgSrc: "https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?cs=srgb&dl=pexels-juan-pablo-serrano-arenas-1246437.jpg&fm=jpg",
+          name: "Piano",
+          total: this.piano
         },
-        { 
-          imgSrc: "https://images.unsplash.com/photo-1605020420620-20c943cc4669?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGd1aXRhcnxlbnwwfHwwfHx8MA%3D%3D", 
-          name: "Guitar" ,
-          total : this.guitar
+        {
+          imgSrc: "https://images.unsplash.com/photo-1605020420620-20c943cc4669?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGd1aXRhcnxlbnwwfHwwfHx8MA%3D%3D",
+          name: "Guitar",
+          total: this.guitar
         },
-        { 
-          imgSrc: "https://images.unsplash.com/photo-1573871666457-7c7329118cf9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHJ1bXBldHxlbnwwfHwwfHx8MA%3D%3D", 
-          name: "Trumpet" ,
-          total : this.trumpet
+        {
+          imgSrc: "https://images.unsplash.com/photo-1573871666457-7c7329118cf9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHJ1bXBldHxlbnwwfHwwfHx8MA%3D%3D",
+          name: "Trumpet",
+          total: this.trumpet
         },
-        { 
-          imgSrc: "https://t3.ftcdn.net/jpg/00/70/32/10/360_F_70321053_rphQ2sbox2DJIuZkCJjmxnMgpC0ml2HS.jpg", 
-          name: "Beatbox", 
-          total : this.beatbox
+        {
+          imgSrc: "https://t3.ftcdn.net/jpg/00/70/32/10/360_F_70321053_rphQ2sbox2DJIuZkCJjmxnMgpC0ml2HS.jpg",
+          name: "Beatbox",
+          total: this.beatbox
         },
-        { 
-          imgSrc: "https://3.bp.blogspot.com/-hQjp7wRRg64/Ws_HGzsSjfI/AAAAAAAAL7E/__Aozb1wP-QNG_2lBil2ShAVMz-9Ev_-QCLcBGAs/s1600/Tabla.jpg", 
-          name: "Tabla" ,
-          total : this.tabla
+        {
+          imgSrc: "https://3.bp.blogspot.com/-hQjp7wRRg64/Ws_HGzsSjfI/AAAAAAAAL7E/__Aozb1wP-QNG_2lBil2ShAVMz-9Ev_-QCLcBGAs/s1600/Tabla.jpg",
+          name: "Tabla",
+          total: this.tabla
         }
       ]
     });
   }
-
-  compare (a1:any, a2:any) {
-    a1.filter((v:any) => this.userList.instrument.includes(v)).length;
-  } 
 
   closePopupNew() {
     this.instName = [];
@@ -156,6 +158,11 @@ export class TotalNumberComponent implements OnInit {
     this.userService.deleteUser(this.selectedUser._id).subscribe(result => {
       if (result) {
         this.openDelete = false;
+
+        setTimeout(() => {
+          this.deleteSuccess = true;
+        }, 1000);
+
         console.log(result);
       }
     });
