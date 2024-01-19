@@ -190,6 +190,7 @@ label {
 
     .btnDanger {
         width: 50%;
+        display:flow;
     }
 
     .profileCenter {
