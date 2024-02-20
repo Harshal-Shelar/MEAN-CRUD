@@ -5,8 +5,9 @@
             <i class="fa fa-search form-control-feedback"></i>
             <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search...">
         </div>
+        
         <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
-            <i class="fa fa-user-plus"></i> Add New User 
+            <i class="fa fa-user-plus"></i> Add New User
         </button>
     </div>
     <div class="topIcons">
@@ -19,6 +20,7 @@
             <table class="table table-borderless" cellspacing="0">
                 <thead>
                     <tr>
+                        <th> </th>
                         <th scope="col">Profile Image</th>
                         <th scope="col"><i (click)="onSortClick($event)"
                                 class="fa fa-long-arrow-down"></i>&nbsp;&nbsp;First name</th>
@@ -43,7 +45,8 @@
                             currentPage: page,
                             totalItems: count
                           };let i = index">
-                        <td scope="row"> <img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
+                        <td scope="row"><input type="checkbox" (change)="selectUserCheckbox($event, user._id)" class="checkBoxTd" /></td>
+                        <td scope="row"><img [src]="user.profileImg" alt="" width="70px" height="70px"></td>
                         <td scope="row">{{user.firstName}}</td>
                         <td scope="row">{{user.lastName}}</td>
                         <td scope="row">{{user.address}}</td>
@@ -54,12 +57,13 @@
                             <span *ngIf="user.instrument == 'Piano' " style="color: yellow;">{{user.instrument}}</span>
                             <span *ngIf="user.instrument == 'Tabla' " style="color: green;">{{user.instrument}}</span>
                             <span *ngIf="user.instrument == 'Trumpet' " style="color: blue;">{{user.instrument}}</span>
-                            <span *ngIf="user.instrument == 'Beatbox' " style="color: purple;">{{user.instrument}}</span>
+                            <span *ngIf="user.instrument == 'Beatbox' "
+                                style="color: purple;">{{user.instrument}}</span>
                             <span *ngIf="user.instrument == 'Guitar' " style="color:crimson;">{{user.instrument}}</span>
                         </td>
                         <td scope="row" class="actionBtns">
-                            <button type="button" class="btn tableEdit action-btn"
-                                [routerLink]="[ '/edit', user._id ]"> <i class="fa fa-pencil"></i> Edit</button>
+                            <button type="button" class="btn tableEdit action-btn" [routerLink]="[ '/edit', user._id ]">
+                                <i class="fa fa-pencil"></i> Edit</button>
                             <button type="button" class="btn tableDelete action-btn" data-toggle="modal"
                                 (click)="selectUser(user)"> <i class="fa fa-trash"></i> Delete</button>
                         </td>

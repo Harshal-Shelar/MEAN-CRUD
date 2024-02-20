@@ -22,6 +22,8 @@ export class ListALLComponent implements OnInit {
   searchText : any;
   sortDir = 1;
   showSpinner : any;
+  resArray: any[] = [];
+  enableDelete : any;
   
   constructor(private userService: UserService, private router : Router) { }
 
@@ -37,8 +39,6 @@ export class ListALLComponent implements OnInit {
     this.userService.getAllUsers(null).subscribe(result => {
       if (result) {
         this.userList = result.data;
-      } else {
-
       }
     });
     return true;
@@ -96,5 +96,14 @@ export class ListALLComponent implements OnInit {
       b = b[colName].toLowerCase();
       return a.localeCompare(b) * this.sortDir;
     });
+  }
+
+  selectUserCheckbox(event:any, userId :any){
+    if(event.target.checked){
+      this.resArray.push(userId);
+      console.log(this.resArray);
+    }else{
+      console.log("not checked");
+    }
   }
 }

@@ -9,12 +9,6 @@ import { Router } from '@angular/router';
 })
 export class TotalNumberComponent implements OnInit {
 
-  drums: any = 0;
-  piano: any = 0;
-  guitar: any = 0;
-  trumpet: any = 0;
-  tabla: any = 0;
-  beatbox: any = 0;
   userList: any = [];
   instName: any = [];
   changeName: any;
@@ -23,75 +17,36 @@ export class TotalNumberComponent implements OnInit {
   openPopup: any = false;
   openDelete: any = false;
   searchText: any;
-  instArray: any;
-  deleteSuccess : any;
-
-  instArrayList: any = ['Tabla', 'Piano', 'Guitar', 'Trumpet', 'Drums', 'Beatbox']
+  deleteSuccess: any;
+  countArr: any[] = [];
+  current: any[] = [];
+  cnt = 0;
+  valueArr: any;
+  instrumentName: any = [];
+  count: any = {};
+  keys : any = [];
+  values : any = [];
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.instArrayList.map((myData : any)=>{
-      console.log("inst array list :- ", myData);
-    });
-
     this.userService.getAllUsers(null).subscribe(result => {
       if (result) {
         this.userList = result.data;
 
-        this.userList.map((data: any) => {
-          if (data.instrument == "Drums") {
-            return this.drums++;
-          }
-          if (data.instrument == "Guitar") {
-            return this.guitar++;
-          }
-          if (data.instrument == "Trumpet") {
-            return this.trumpet++;
-          }
-          if (data.instrument == "Piano") {
-            return this.piano++;
-          }
-          if (data.instrument == "Tabla") {
-            return this.tabla++;
-          }
-          if (data.instrument == "Beatbox") {
-            return this.beatbox++;
-          }
-        })
+        this.userList.map((x: any) => {
+          this.instrumentName.push(x.instrument);
+        });
+
+        this.instrumentName.sort();
+
+        this.instrumentName.forEach((element: any) => {
+          this.count[element] = (this.count[element] || 0) + 1;
+        });
+
+        this.keys = Object.keys(this.count);
+        this.values = Object.values(this.count);
       }
-      this.instArray = [
-        {
-          imgSrc: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJ1bXN8ZW58MHx8MHx8fDA%3D",
-          name: "Drums",
-          total: this.drums
-        },
-        {
-          imgSrc: "https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?cs=srgb&dl=pexels-juan-pablo-serrano-arenas-1246437.jpg&fm=jpg",
-          name: "Piano",
-          total: this.piano
-        },
-        {
-          imgSrc: "https://images.unsplash.com/photo-1605020420620-20c943cc4669?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGd1aXRhcnxlbnwwfHwwfHx8MA%3D%3D",
-          name: "Guitar",
-          total: this.guitar
-        },
-        {
-          imgSrc: "https://images.unsplash.com/photo-1573871666457-7c7329118cf9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHJ1bXBldHxlbnwwfHwwfHx8MA%3D%3D",
-          name: "Trumpet",
-          total: this.trumpet
-        },
-        {
-          imgSrc: "https://t3.ftcdn.net/jpg/00/70/32/10/360_F_70321053_rphQ2sbox2DJIuZkCJjmxnMgpC0ml2HS.jpg",
-          name: "Beatbox",
-          total: this.beatbox
-        },
-        {
-          imgSrc: "https://3.bp.blogspot.com/-hQjp7wRRg64/Ws_HGzsSjfI/AAAAAAAAL7E/__Aozb1wP-QNG_2lBil2ShAVMz-9Ev_-QCLcBGAs/s1600/Tabla.jpg",
-          name: "Tabla",
-          total: this.tabla
-        }
-      ]
     });
   }
 
@@ -143,7 +98,6 @@ export class TotalNumberComponent implements OnInit {
         }
       })
     }
-
     if (name === "Trumpet") {
       this.changeName = name;
       this.userList.map((data: any) => {
